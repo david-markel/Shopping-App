@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ItemsYouWillLikeComponent } from './items-you-will-like/items-you-will-like.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ItemsYouWillLikeComponent
   ],
   imports: [
     BrowserModule,

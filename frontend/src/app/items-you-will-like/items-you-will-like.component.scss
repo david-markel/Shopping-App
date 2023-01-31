@@ -1,0 +1,24 @@
+.main {
+    background-color: var(--primary-brown);
+    height: 400px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+}
+
+.itemImages {
+    width: 250px;
+}
+
+.images{
+    display: flex;
+    justify-content: space-between !important;
+    width: 100%;
+}
+
+.justForYou {
+    color: white;
+    font-size: xx-large;
+}
