@@ -1,11 +1,12 @@
 .main {
-    background-color: var(--primary-brown);
+    // background-color: var(--primary-brown);
     height: 400px;
     width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
     // justify-content: center;
+    background-image: url("../../assets/DALLE/brownShape1.png");
 }
 
 .itemImages {
@@ -16,9 +17,18 @@
     display: flex;
     justify-content: space-between !important;
     width: 100%;
+    align-items: center;
 }
 
 .justForYou {
     color: white;
     font-size: xx-large;
+}
+
+.icons {
+    color: white;
+    font-size: 40px;
+    width: 35px;
+    margin-top: 20px;
+    height: 35px;
 }
