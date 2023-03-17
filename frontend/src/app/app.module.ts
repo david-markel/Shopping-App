@@ -13,13 +13,15 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ItemsYouWillLikeComponent } from './items-you-will-like/items-you-will-like.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     SearchBarComponent,
-    ItemsYouWillLikeComponent
+    ItemsYouWillLikeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

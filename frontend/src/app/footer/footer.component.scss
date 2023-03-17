@@ -1,0 +1,31 @@
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color:white;
+}
+
+.bottomHalf {
+    background: var(--primary-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--primary-brown);
+}
+
+.categories {
+    font-size: 1.8em;
+    color: inherit;
+    white-space: nowrap;
+}
+
+.copywrite {
+    margin-top: 20px;
+}
+
+.conditionsOfUse {
+    color: inherit;
+}
+
