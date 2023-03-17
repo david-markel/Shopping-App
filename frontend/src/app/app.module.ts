@@ -9,11 +9,12 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { ItemsYouWillLikeComponent } from './items-you-will-like/items-you-will-like.component';
-import { FooterComponent } from './footer/footer.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ItemsYouWillLikeComponent } from './components/items-you-will-like/items-you-will-like.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     NavBarComponent,
     SearchBarComponent,
     ItemsYouWillLikeComponent,
-    FooterComponent
+    FooterComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
