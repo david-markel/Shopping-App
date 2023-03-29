@@ -1,1 +1,4 @@
-<img src="{{ image }}" alt="" class="itemImages" />
+<img [src]="props.imageSrc" alt="" class="itemImages" />
+<h2>{{ props.title }}</h2>
+<p>{{ props.description }}</p>
+<p>Price: ${{ props.price }}</p>

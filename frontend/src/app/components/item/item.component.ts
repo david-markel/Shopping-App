@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ItemData {
+  imageSrc: string;
+  title: string;
+  description: string;
+  price: number;
+}
 
 @Component({
   selector: 'app-item',
@@ -6,8 +13,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent {
-  public imageSrc: string = "";
-  public title: string = "";
-  public description: string = "";
-  public price: number = 0;
+  @Input() props: ItemData = { imageSrc: '', title: '', description: '', price: 0 };
 }

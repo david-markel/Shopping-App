@@ -2,17 +2,9 @@
   <h1 class="justForYou">Just for you</h1>
   <div class="images">
     <mat-icon class="icons">keyboard_arrow_left</mat-icon>
-    <img
-      src="../../assets/itemImages/blackCouch.jpg"
-      alt=""
-      class="itemImages"
-    />
-    <img src="../../assets/itemImages/ds.jpg" alt="" class="itemImages" />
-    <img
-      src="../../assets/itemImages/yellowDress.jpg"
-      alt=""
-      class="itemImages"
-    />
+    <app-item [props]="itemData[0]"></app-item>
+    <app-item [props]="itemData[1]"></app-item>
+    <app-item [props]="itemData[2]"></app-item>
     <mat-icon class="icons">keyboard_arrow_right</mat-icon>
   </div>
   <mat-icon class="icons">more_horiz</mat-icon>

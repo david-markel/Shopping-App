@@ -1,0 +1,160 @@
+{
+    "household" : [
+        {
+        "imageSrc": "../../assets/itemImages/stainlessSteelCookware.jpg",
+        "title": "Stainless Steel Cookware Set",
+        "description": "A 12-piece stainless steel cookware set for all your cooking needs",
+        "price": 199.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/vacuumCleaner.jpg",
+        "title": "Bagless Vacuum Cleaner",
+        "description": "A powerful and efficient bagless vacuum cleaner for all floor types",
+        "price": 299.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/airPurifier.jpg",
+        "title": "HEPA Air Purifier",
+        "description": "A compact HEPA air purifier to keep your home fresh and allergen-free",
+        "price": 99.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/electricKettle.jpg",
+        "title": "Electric Kettle",
+        "description": "A 1.7-liter stainless steel electric kettle with temperature control",
+        "price": 49.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/coffeeMaker.jpg",
+        "title": "Coffee Maker",
+        "description": "A programmable 12-cup coffee maker with a built-in grinder",
+        "price": 149.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/blender.jpg",
+        "title": "High-Speed Blender",
+        "description": "A professional-grade high-speed blender for smoothies, soups, and more",
+        "price": 179.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/bedSheetSet.jpg",
+        "title": "Bed Sheet Set",
+        "description": "A 4-piece 100% Egyptian cotton bed sheet set in a range of colors",
+        "price": 89.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/towelSet.jpg",
+        "title": "Bamboo Towel Set",
+        "description": "A 6-piece ultra-soft and absorbent bamboo towel set",
+        "price": 59.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/candleSet.jpg",
+        "title": "Scented Candle Set",
+        "description": "A set of 3 aromatherapy scented candles for relaxation and stress relief",
+        "price": 29.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/plantPots.jpg",
+        "title": "Ceramic Plant Pots",
+        "description": "A set of 3 modern ceramic plant pots with drainage holes",
+        "price": 34.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/microwaveOven.jpg",
+        "title": "Microwave Oven",
+        "description": "A 1000-watt countertop microwave oven with 10 power levels",
+        "price": 129.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/areaRug.jpg",
+        "title": "Area Rug",
+        "description": "A stylish and plush area rug for any room in your home",
+        "price": 199.99
+        },
+        {
+        "imageSrc": "../../assets/itemImages/cuttingBoardSet.jpg",
+        "title": "Cutting Board Set",
+        "description": "A 3-piece non-slip cutting board set with dishwasher-safe construction",
+        "price": 24.99
+        },
+        {
+            "imageSrc": "../../assets/itemImages/dinnerwareSet.jpg",
+            "title": "Dinnerware Set",
+            "description": "A 16-piece modern stoneware dinnerware set with service for four",
+            "price": 119.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/throwBlanket.jpg",
+            "title": "Throw Blanket",
+            "description": "A cozy and soft fleece throw blanket for snuggling on the couch or bed",
+            "price": 29.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/foodStorageContainers.jpg",
+            "title": "Food Storage Containers",
+            "description": "A set of 10 BPA-free plastic food storage containers with airtight lids",
+            "price": 39.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/laundryBasket.jpg",
+            "title": "Laundry Basket",
+            "description": "A durable and lightweight laundry basket with built-in handles for easy carrying",
+            "price": 19.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/trashCan.jpg",
+            "title": "Trash Can",
+            "description": "A stainless steel step trash can with a soft-close lid and removable inner bucket",
+            "price": 59.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/ironingBoard.jpg",
+            "title": "Ironing Board",
+            "description": "A sturdy ironing board with adjustable height and a 100% cotton cover",
+            "price": 49.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/steamIron.jpg",
+            "title": "Steam Iron",
+            "description": "A powerful steam iron with a non-stick soleplate and auto shut-off",
+            "price": 39.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/floorLamp.jpg",
+            "title": "Floor Lamp",
+            "description": "A modern floor lamp with adjustable brightness and a sleek design",
+            "price": 69.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/humidifier.jpg",
+            "title": "Ultrasonic Humidifier",
+            "description": "A quiet ultrasonic humidifier with a large water tank and adjustable mist output",
+            "price": 49.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/toasterOven.jpg",
+            "title": "Toaster Oven",
+            "description": "A versatile toaster oven with multiple cooking functions and a spacious interior",
+            "price": 99.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/clockRadio.jpg",
+            "title": "Clock Radio",
+            "description": "An AM/FM clock radio with dual alarms and a large LED display",
+            "price": 29.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/wallMirror.jpg",
+            "title": "Wall Mirror",
+            "description": "A decorative wall mirror with a modern design for any room in your home",
+            "price": 89.99
+            },
+            {
+            "imageSrc": "../../assets/itemImages/knifeSet.jpg",
+            "title": "Knife Set",
+            "description": "A 12-piece high-carbon stainless steel knife set with a wooden block",
+            "price": 129.99
+            }
+    ]
+}
