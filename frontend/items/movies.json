@@ -1,0 +1,124 @@
+{
+    "movies": [
+        {
+            "imageSrc": "itemImages/movies/The_Godfather.jpg",
+            "title": "The Godfather",
+            "description": "A classic crime drama about the Corleone family and their mafia empire",
+            "price": 9.99
+        },
+        {
+            "imageSrc": "itemImages/movies/Star_Wars_Episode_IV__A_New_Hope.jpg",
+            "title": "Star Wars: Episode IV - A New Hope",
+            "description": "The first installment of the iconic Star Wars franchise, featuring Luke Skywalker, Han Solo, and Princess Leia",
+            "price": 12.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Shawshank_Redemption.jpg",
+            "title": "The Shawshank Redemption",
+            "description": "A poignant drama about the friendship between two prisoners, starring Tim Robbins and Morgan Freeman",
+            "price": 7.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Dark_Knight.jpg",
+            "title": "The Dark Knight",
+            "description": "A thrilling and action-packed superhero film featuring Batman and the Joker",
+            "price": 14.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Matrix.jpg",
+            "title": "The Matrix",
+            "description": "A mind-bending sci-fi action film about a hacker who discovers the true nature of reality",
+            "price": 11.99
+        },
+        {
+            "imageSrc": "itemImages/movies/Jurassic_Park.jpg",
+            "title": "Jurassic Park",
+            "description": "A thrilling adventure film about a theme park filled with genetically engineered dinosaurs",
+            "price": 8.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Terminator.jpg",
+            "title": "The Terminator",
+            "description": "A sci-fi action film about a cyborg assassin sent back in time to kill a future resistance leader",
+            "price": 9.99
+        },
+        {
+            "imageSrc": "itemImages/movies/Forrest_Gump.jpg",
+            "title": "Forrest Gump",
+            "description": "A heartwarming drama about a simple man who unwittingly becomes a part of several pivotal moments in history",
+            "price": 6.99
+        },
+        {
+            "imageSrc": "itemImages/movies/Titanic.jpg",
+            "title": "Titanic",
+            "description": "A romantic disaster film about the ill-fated voyage of the RMS Titanic",
+            "price": 10.99
+        },
+        {
+            "imageSrc": "itemImages/movies/Inception.jpg",
+            "title": "Inception",
+            "description": "A mind-bending sci-fi thriller about a thief who enters people's dreams to steal their secrets",
+            "price": 13.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Lion_King.jpg",
+            "title": "The Lion King",
+            "description": "An animated musical adventure about a young lion prince's journey to become king",
+            "price": 7.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Social_Network.jpg",
+            "title": "The Social Network",
+            "description": "A biographical drama about the founding of Facebook and the relationships that led to its creation",
+            "price": 8.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Silence_of_the_Lambs.jpg",
+            "title": "The Silence of the Lambs",
+            "description": "A psychological horror-thriller about an FBI agent who seeks the help of a cannibalistic serial killer to catch another killer on the loose",
+            "price": 9.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Hateful_Eight.jpg",
+            "title": "The Hateful Eight",
+            "description": "A western mystery film about eight strangers who seek refuge from a blizzard in a stagecoach stopover",
+            "price": 11.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Green_Mile.jpg",
+            "title": "The Green Mile",
+            "description": "A supernatural drama film about a death row corrections officer who discovers that one of the inmates has a special gift",
+            "price": 7.99
+        },
+        {
+            "imageSrc": "itemImages/movies/Goodfellas.jpg",
+            "title": "Goodfellas",
+            "description": "A crime drama film about the rise and fall of a young mobster in the 1960s and 1970s",
+            "price": 8.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Twilight_Saga.jpg",
+            "title": "The Twilight Saga",
+            "description": "A romantic fantasy film series about a teenage girl who falls in love with a vampire",
+            "price": 24.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Great_Gatsby.jpg",
+            "title": "The Great Gatsby",
+            "description": "A romantic drama film based on the novel of the same name by F. Scott Fitzgerald",
+            "price": 7.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Prestige.jpg",
+            "title": "The Prestige",
+            "description": "A mystery thriller about two rival magicians in 19th-century London",
+            "price": 12.99
+        },
+        {
+            "imageSrc": "itemImages/movies/The_Martian.jpg",
+            "title": "The Martian",
+            "description": "A science fiction film about an astronaut who is stranded on Mars and must find a way to survive and return to Earth",
+            "price": 9.99
+        }
+    ]
+}

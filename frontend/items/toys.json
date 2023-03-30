@@ -1,0 +1,124 @@
+{
+    "toys": [
+        {
+            "imageSrc": "itemImages/toys/Lego_Star_Wars_Set.jpg",
+            "title": "Lego Star Wars Set",
+            "description": "A Lego Star Wars set with 500+ pieces to build your own spaceship",
+            "price": 69.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Barbie_Dream_House.jpg",
+            "title": "Barbie Dream House",
+            "description": "A three-story Barbie Dream House with seven rooms and over 70 accessories",
+            "price": 179.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Remote_Control_Car.jpg",
+            "title": "Remote Control Car",
+            "description": "A fast and fun remote control car for racing and stunts",
+            "price": 49.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Nerf_Gun.jpg",
+            "title": "Nerf Gun",
+            "description": "A powerful Nerf gun with foam darts for exciting battles",
+            "price": 29.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Paw_Patrol_Playset.jpg",
+            "title": "Paw Patrol Playset",
+            "description": "A Paw Patrol playset with a tower, slide, and six characters for hours of imaginative play",
+            "price": 49.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Hot_Wheels_Track_Set.jpg",
+            "title": "Hot Wheels Track Set",
+            "description": "A Hot Wheels track set with loops, jumps, and curves for exciting races",
+            "price": 39.99
+        },
+        {
+            "imageSrc": "itemImages/toys/L.O.L._Surprise_Doll.jpg",
+            "title": "L.O.L. Surprise Doll",
+            "description": "A surprise doll with over 10 surprises inside for a fun and exciting unboxing experience",
+            "price": 14.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Play-Doh_Set.jpg",
+            "title": "Play-Doh Set",
+            "description": "A set of 20 Play-Doh colors with tools and accessories for endless creative play",
+            "price": 19.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Monopoly_Game.jpg",
+            "title": "Monopoly Game",
+            "description": "A classic Monopoly board game with updated gameplay and modern graphics",
+            "price": 24.99
+        },
+        {
+            "imageSrc": "itemImages/toys/RC_Drone.jpg",
+            "title": "RC Drone",
+            "description": "A high-quality RC drone with a camera for aerial photography and video",
+            "price": 99.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Transformers_Figure.jpg",
+            "title": "Transformers Figure",
+            "description": "A highly-detailed Transformers figure with poseable joints for imaginative play",
+            "price": 49.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Hatchimals_Egg.jpg",
+            "title": "Hatchimals Egg",
+            "description": "A magical Hatchimals egg that hatches to reveal a surprise creature",
+            "price": 29.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Pokemon_Card_Game.jpg",
+            "title": "Pokemon Card Game",
+            "description": "A Pokemon trading card game with rare and powerful cards for exciting battles",
+            "price": 19.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Remote_Control_Helicopter.jpg",
+            "title": "Remote Control Helicopter",
+            "description": "A high-performance remote control helicopter with advanced flight control for indoor or outdoor use",
+            "price": 79.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Funko_Pop_Figure.jpg",
+            "title": "Funko Pop Figure",
+            "description": "A cute and collectible Funko Pop figure of your favorite character",
+            "price": 9.99
+        },
+        {
+            "imageSrc": "itemImages/toys/My_Little_Pony_Playset.jpg",
+            "title": "My Little Pony Playset",
+            "description": "A My Little Pony playset with a castle, characters, and accessories for imaginative play",
+            "price": 39.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Marvel_Action_Figure_Set.jpg",
+            "title": "Marvel Action Figure Set",
+            "description": "A set of Marvel action figures with multiple points of articulation for dynamic play",
+            "price": 59.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Nintendo_Switch_Game.jpg",
+            "title": "Nintendo Switch Game",
+            "description": "A popular Nintendo Switch game with exciting gameplay and stunning graphics",
+            "price": 59.99
+        },
+        {
+            "imageSrc": "itemImages/toys/LEGO_Classic_Set.jpg",
+            "title": "LEGO Classic Set",
+            "description": "A LEGO Classic set with 1000+ pieces to build anything your imagination can dream up",
+            "price": 49.99
+        },
+        {
+            "imageSrc": "itemImages/toys/Disney_Princess_Doll.jpg",
+            "title": "Disney Princess Doll",
+            "description": "A beautiful and detailed Disney Princess doll for endless fairy tale adventures",
+            "price": 24.99
+        }
+    ]
+}
