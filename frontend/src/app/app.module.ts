@@ -9,12 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ItemsYouWillLikeComponent } from './components/items-you-will-like/items-you-will-like.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ItemComponent } from './components/item/item.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { ItemComponent } from './components/item/item.component';
     SearchBarComponent,
     ItemsYouWillLikeComponent,
     FooterComponent,
-    ItemComponent
+    ItemComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { ItemComponent } from './components/item/item.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

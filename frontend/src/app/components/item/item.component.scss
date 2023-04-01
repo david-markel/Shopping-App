@@ -1,3 +1,45 @@
-.itemImages {
-    width: 300px;
-}
+:host {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .itemImages {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 200px; // Adjust this value according to your desired image height
+  }
+  
+  .item-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  h2,
+  p {
+    margin: 0;
+  }
+  
+  h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
