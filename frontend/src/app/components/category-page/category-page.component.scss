@@ -1,0 +1,32 @@
+.category-page {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 1rem;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%; // Set the initial max-width to 100%
+  transition: transform 0.3s ease-in-out, max-width 0.3s ease-in-out; // Add a smooth transition for max-width property
+}
+
+
+.with-selected-item .content {
+  transform: translateX(-0%); // Adjust this value to control how much the content is pushed to the left
+  max-width: 70%; // Adjust this value to control the maximum width of the content when an item is selected
+}
+
+
+app-item-detail {
+  max-width: 30%;
+  min-width: 300px;
+  position: fixed;
+  top: calc(130px + 1rem);
+  transition: transform 0.3s ease-in-out; // Add a smooth transition when the item detail appears on the right
+}
+
+.with-selected-item app-item-detail {
+  transform: translateX(240%); // Adjust this value to control how much the item detail is moved to the right
+}

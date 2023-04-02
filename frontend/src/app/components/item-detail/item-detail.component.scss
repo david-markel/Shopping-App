@@ -1,0 +1,38 @@
+.item-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 1rem;
+  }
+  
+  .image-container {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 1rem;
+  }
+  
+  .detail-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .content-container {
+    flex: 1;
+  }
+  
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  

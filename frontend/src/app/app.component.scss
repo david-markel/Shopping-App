@@ -1,9 +1,4 @@
-.itemsYouWillLike {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // margin-top: 50px;
-}
+
 
 app-footer {
     width: 100%;
@@ -12,8 +7,9 @@ app-footer {
 .app-content {
 display: flex;
 }
+.main-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
   
-
-.spacer {
-    height: 1500px;
-}
+  

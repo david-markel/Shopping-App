@@ -12,11 +12,11 @@ export class CategoryListComponent implements OnInit {
   category: string = 'movies';
   @Output() itemClicked = new EventEmitter<any>();
 
-  onItemClick(item: any) {
-    console.log("Emitting itemClicked event in CategoryListComponent");
-    this.itemClicked.emit(item);
-    console.log("CLICKED IN category", item);
-  }
+onItemClick(item: any) {
+  console.log("Emitting itemClicked event in CategoryListComponent");
+  this.itemClicked.emit(item);
+  console.log("CLICKED IN category", item);
+}
   
 
   constructor(private itemService: ItemService, private route: ActivatedRoute) {}

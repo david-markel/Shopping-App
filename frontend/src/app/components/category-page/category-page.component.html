@@ -1,0 +1,16 @@
+<div class="category-page" [ngClass]="{ 'with-selected-item': selectedItem }">
+  <div class="content">
+    <app-items-you-will-like
+      class="itemsYouWillLike"
+      style="display: flex; justify-content: center; align-items: center"
+    >
+    </app-items-you-will-like>
+    <app-category-list
+      (itemClicked)="onItemSelected($event)"
+    ></app-category-list>
+  </div>
+  <app-item-detail
+    *ngIf="selectedItem"
+    [selectedItem]="selectedItem"
+  ></app-item-detail>
+</div>
