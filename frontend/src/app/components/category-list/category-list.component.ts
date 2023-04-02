@@ -1,23 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ItemService } from 'src/app/services/item-service.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.scss']
 })
-export class CategoryListComponent {
+export class CategoryListComponent implements OnInit {
   jsonData: any;
+  category: string = 'movies';
+  private routeParamsSubscription!: Subscription;
 
-  constructor(private itemService: ItemService) {}
+  constructor(private itemService: ItemService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const fileName = 'movies.json'; // Replace with your JSON file name
+    this.route.params.subscribe(params => { // Change to this.route.params.subscribe
+      console.log('Route parameters changed:', params);
+      this.category = params['category']; // Access the value with params['category']
+      this.loadData();
+    });
+  }
+
+  loadData(): void {
+    const fileName = `${this.category}.json`; // Use the category as part of the file name
     this.itemService.readJSONFile(fileName).subscribe(
       (result: any) => {
         this.jsonData = result;
-        this.jsonData.furniture = this.jsonData.movies.map((item: any) => {
+        this.jsonData[this.category] = this.jsonData[this.category].map((item: any) => {
           return {
             ...item,
             imageSrc: '../../../assets/items/' + item.imageSrc,
@@ -30,5 +41,4 @@ export class CategoryListComponent {
       }
     );
   }
-  
 }

@@ -37,13 +37,13 @@
             "price": 39.99
         },
         {
-            "imageSrc": "itemImages/toys/L.O.L._Surprise_Doll.jpg",
+            "imageSrc": "itemImages/toys/LOL_Surprise_Doll.jpg",
             "title": "L.O.L. Surprise Doll",
             "description": "A surprise doll with over 10 surprises inside for a fun and exciting unboxing experience",
             "price": 14.99
         },
         {
-            "imageSrc": "itemImages/toys/Play-Doh_Set.jpg",
+            "imageSrc": "itemImages/toys/PlayDoh_Set.jpg",
             "title": "Play-Doh Set",
             "description": "A set of 20 Play-Doh colors with tools and accessories for endless creative play",
             "price": 19.99
