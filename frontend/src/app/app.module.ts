@@ -18,6 +18,7 @@ import { ItemsYouWillLikeComponent } from './components/items-you-will-like/item
 import { FooterComponent } from './components/footer/footer.component';
 import { ItemComponent } from './components/item/item.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CategoryListComponent } from './components/category-list/category-list.
     ItemsYouWillLikeComponent,
     FooterComponent,
     ItemComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,

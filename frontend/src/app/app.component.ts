@@ -13,4 +13,13 @@ export class AppComponent {
     this.counter += 1;
     console.log("Counter: ", this.counter)
   }
+
+  selectedItem: any;
+
+  onItemSelected(item: any) {
+    console.log("Received itemClicked event in AppComponent");
+    console.log("AM I EVER GETTING CALLED?");
+    this.selectedItem = item;
+  }
+  
 }

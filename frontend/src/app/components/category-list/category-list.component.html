@@ -1,3 +1,7 @@
 <div class="item-container">
-  <app-item *ngFor="let item of jsonData?.[category]" [props]="item"></app-item>
+  <app-item
+    *ngFor="let item of jsonData?.[category]"
+    [props]="item"
+    (click)="onItemClick(item)"
+  ></app-item>
 </div>

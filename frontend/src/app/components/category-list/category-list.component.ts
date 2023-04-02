@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ItemService } from 'src/app/services/item-service.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-category-list',
@@ -11,7 +10,14 @@ import { Subscription } from 'rxjs';
 export class CategoryListComponent implements OnInit {
   jsonData: any;
   category: string = 'movies';
-  private routeParamsSubscription!: Subscription;
+  @Output() itemClicked = new EventEmitter<any>();
+
+  onItemClick(item: any) {
+    console.log("Emitting itemClicked event in CategoryListComponent");
+    this.itemClicked.emit(item);
+    console.log("CLICKED IN category", item);
+  }
+  
 
   constructor(private itemService: ItemService, private route: ActivatedRoute) {}
 

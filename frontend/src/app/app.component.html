@@ -1,6 +1,12 @@
 <app-nav-bar></app-nav-bar>
 <app-items-you-will-like class="itemsYouWillLike"> </app-items-you-will-like>
-<app-category-list></app-category-list>
+<div class="app-content">
+  <app-category-list (itemClicked)="onItemSelected($event)"></app-category-list>
+  <app-item-detail
+    *ngIf="selectedItem"
+    [selectedItem]="selectedItem"
+  ></app-item-detail>
+</div>
 <router-outlet></router-outlet>
 <!-- <div class="spacer"></div> -->
 <app-footer></app-footer>

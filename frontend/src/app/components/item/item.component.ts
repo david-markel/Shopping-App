@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
 
 interface ItemData {
   imageSrc: string;
