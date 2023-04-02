@@ -1,4 +1,7 @@
 <div class="item-detail">
+  <button mat-icon-button class="close-button" (click)="onCloseButtonClick()">
+    <mat-icon>close</mat-icon>
+  </button>
   <div class="image-container">
     <img [src]="selectedItem.imageSrc" alt="" class="detail-image" />
   </div>

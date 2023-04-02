@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item-detail',
@@ -7,6 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemDetailComponent {
   @Input() selectedItem: any;
+  @Output() closeButtonClick = new EventEmitter<void>();
+
+  onCloseButtonClick() {
+    this.closeButtonClick.emit();
+  }
 
   constructor() {}
+  
 }

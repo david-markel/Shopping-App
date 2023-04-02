@@ -10,7 +10,9 @@
     ></app-category-list>
   </div>
   <app-item-detail
-    *ngIf="selectedItem"
     [selectedItem]="selectedItem"
+    [style.top.px]="topOffset"
+    (closeButtonClick)="selectedItem = null"
+    [ngClass]="{ visible: selectedItem }"
   ></app-item-detail>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-category-page',
@@ -10,5 +10,14 @@ export class CategoryPageComponent {
 
   onItemSelected(item: any) {
     this.selectedItem = item;
+  }
+
+  navbarHeight = 146;
+  topOffset = this.navbarHeight;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    this.topOffset = scrollY >= this.navbarHeight ? 0 : this.navbarHeight;
   }
 }

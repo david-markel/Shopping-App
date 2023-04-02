@@ -23,10 +23,18 @@ app-item-detail {
   max-width: 30%;
   min-width: 300px;
   position: fixed;
-  top: calc(130px + 1rem);
-  transition: transform 0.3s ease-in-out; // Add a smooth transition when the item detail appears on the right
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; // Prevent interaction with the hidden item-detail component
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .with-selected-item app-item-detail {
-  transform: translateX(240%); // Adjust this value to control how much the item detail is moved to the right
+  transform: translateX(235%); // Adjust this value to control how much the item detail is moved to the right
+}
+
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto; // Restore interaction with the visible item-detail component
 }
