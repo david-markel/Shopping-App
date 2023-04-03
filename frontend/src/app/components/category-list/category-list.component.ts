@@ -13,9 +13,7 @@ export class CategoryListComponent implements OnInit {
   @Output() itemClicked = new EventEmitter<any>();
 
 onItemClick(item: any) {
-  console.log("Emitting itemClicked event in CategoryListComponent");
   this.itemClicked.emit(item);
-  console.log("CLICKED IN category", item);
 }
   
 

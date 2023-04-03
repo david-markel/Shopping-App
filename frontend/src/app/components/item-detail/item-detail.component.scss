@@ -5,7 +5,7 @@
     background: var(--primary-grey);
     color: var(--primary-brown);
     padding: 1rem;
-    height: 500px;
+    height: calc(100vh - 130px - 2rem); // 100vh represents the full height of the viewport, subtract 130px for the navbar, and 2rem for the padding
   }
   
   .image-container {
@@ -27,5 +27,20 @@
     position: absolute;
     top: 8px;
     right: 8px;
+  }
+
+  .add-to-cart {
+    background-color: var(--primary-brown);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      filter: brightness(90%); // darken the background color by 10%
+    }
   }
   

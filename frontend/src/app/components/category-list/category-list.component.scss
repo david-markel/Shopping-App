@@ -1,16 +1,12 @@
 .item-container {
-    background-image: url("../../../assets/DALLE/4lines.png");
-    background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 -0.25rem; // Adjust this value to balance the outer margin when you have a fixed gap between items.
-    padding: 4rem; // Add padding to create space between the component and the viewport.
-  }
-  
-  app-item {
-    flex: 0 0 calc(25% - 5rem); // Adjust the percentage and the subtraction value for the desired gap between items.
-    margin: 0.25rem; // This value should be half of the subtraction value above. Adjust the value to control the gap between items.
-    margin-bottom: 1rem;
-  }
-  
+  background-image: url("../../../assets/DALLE/4lines.png");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // This line creates a 4-column grid
+  grid-gap: 0.5rem; // Adjust this value to control the gap between items
+  padding: 4rem; // Add padding to create space between the component and the viewport
+}
+
+app-item {
+  margin-bottom: 1rem;
+}
