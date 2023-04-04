@@ -1,31 +1,55 @@
 .main {
-    // background-color: var(--primary-brown);
-    height: 600px;
-    width: 1400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // justify-content: center;
-    background-image: url("../../../assets/DALLE/brownShape1.png");
-    background-size: cover;
+  // background-color: var(--primary-brown);
+  height: 600px;
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  background-image: url("../../../assets/DALLE/brownShape1.png");
+  background-size: cover;
 }
 
-.images{
-    display: flex;
-    justify-content: space-between !important;
-    width: 100%;
-    align-items: center;
+.images {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; // Hide items that are out of view during the animation
+
+  app-item {
+    flex: 0 0 calc(100% / 3 - 10px);
+    max-width: calc(100% / 3 - 10px);
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  app-item:first-child {
+    margin-left: 0;
+  }
+
+  app-item:last-child {
+    margin-right: 0;
+  }
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .justForYou {
-    color: white;
-    font-size: 60px;
+  color: white;
+  font-size: 60px;
 }
 
 .icons {
-    color: white;
-    font-size: 40px;
-    width: 35px;
-    margin-top: 20px;
-    height: 35px;
+  color: white;
+  font-size: 40px;
+  width: 35px;
+  margin-top: 20px;
+  height: 35px;
 }

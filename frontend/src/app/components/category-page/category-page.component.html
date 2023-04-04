@@ -3,8 +3,9 @@
     <app-items-you-will-like
       class="itemsYouWillLike"
       style="display: flex; justify-content: center; align-items: center"
-    >
-    </app-items-you-will-like>
+      (itemClicked)="onItemSelected($event)"
+    ></app-items-you-will-like>
+
     <app-category-list
       (itemClicked)="onItemSelected($event)"
     ></app-category-list>

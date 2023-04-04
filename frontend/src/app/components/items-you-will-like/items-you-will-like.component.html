@@ -1,11 +1,22 @@
 <div class="main">
   <h1 class="justForYou">Just for you</h1>
   <div class="images">
-    <mat-icon class="icons">keyboard_arrow_left</mat-icon>
-    <app-item [props]="itemData[0]"></app-item>
-    <app-item [props]="itemData[1]"></app-item>
-    <app-item [props]="itemData[2]"></app-item>
-    <mat-icon class="icons">keyboard_arrow_right</mat-icon>
+    <ng-container
+      *ngFor="
+        let item of itemData | slice : currentPage * 3 : currentPage * 3 + 3;
+        let i = index
+      "
+    >
+      <app-item [props]="item" (click)="onItemClick(item)" [@fadeIn]></app-item>
+    </ng-container>
   </div>
-  <mat-icon class="icons">more_horiz</mat-icon>
+  <div class="icon-container">
+    <mat-icon class="icons" (click)="onLeftArrowClick()"
+      >keyboard_arrow_left</mat-icon
+    >
+    <mat-icon class="icons">more_horiz</mat-icon>
+    <mat-icon class="icons" (click)="onRightArrowClick()"
+      >keyboard_arrow_right</mat-icon
+    >
+  </div>
 </div>
