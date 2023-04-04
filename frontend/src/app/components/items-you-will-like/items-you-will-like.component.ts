@@ -35,7 +35,11 @@ export class ItemsYouWillLikeComponent {
     this.itemClicked.emit(item);
   }
 
-  constructor() {}
+  pages: number[] = [];
+
+constructor() {
+  this.pages = Array(Math.ceil(this.itemData.length / 3)).fill(0);
+}
 
 
   currentPage = 0;

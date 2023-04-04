@@ -14,7 +14,13 @@
     <mat-icon class="icons" (click)="onLeftArrowClick()"
       >keyboard_arrow_left</mat-icon
     >
-    <mat-icon class="icons">more_horiz</mat-icon>
+    <div class="pagination-indicator">
+      <div
+        *ngFor="let dot of pages; let i = index"
+        [ngClass]="{ active: currentPage === i }"
+        (click)="currentPage = i"
+      ></div>
+    </div>
     <mat-icon class="icons" (click)="onRightArrowClick()"
       >keyboard_arrow_right</mat-icon
     >
