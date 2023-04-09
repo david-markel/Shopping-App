@@ -20,6 +20,11 @@ import { ItemComponent } from './components/item/item.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { CategoryPageComponent } from './components/category-page/category-page.component';
+import { AboutComponent } from './components/about/about.component';
+import { SupportComponent } from './components/support/support.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { JobsComponent } from './components/jobs/jobs.component';
+import { CommunityComponent } from './components/community/community.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { CategoryPageComponent } from './components/category-page/category-page.
     ItemComponent,
     CategoryListComponent,
     ItemDetailComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    AboutComponent,
+    SupportComponent,
+    ContactComponent,
+    JobsComponent,
+    CommunityComponent
   ],
   imports: [
     BrowserModule,
