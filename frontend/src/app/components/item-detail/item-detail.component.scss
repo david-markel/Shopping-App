@@ -57,3 +57,17 @@
   overflow-y: auto;
   max-height: calc(50vh - 10rem);
 }
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+mat-icon {
+  color: var(--primary-brown);
+}
+
+.rating-number {
+  margin-left: 0.5rem;
+}
