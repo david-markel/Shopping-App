@@ -37,6 +37,9 @@ display: flex;
     @include background-image("../assets/DALLE/ordersBackground.png");
   }
   
+  .account-background {
+    @include background-image("../assets/DALLE/accountBackground.png");
+  }
   
   
   
