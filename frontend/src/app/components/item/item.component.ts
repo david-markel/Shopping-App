@@ -1,11 +1,5 @@
 import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
-
-interface ItemData {
-  imageSrc: string;
-  title: string;
-  description: string;
-  price: number;
-}
+import { ItemData } from '../../models/interfaces';
 
 @Component({
   selector: 'app-item',

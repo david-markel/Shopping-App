@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -25,6 +25,9 @@ import { SupportComponent } from './components/support/support.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { CommunityComponent } from './components/community/community.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { CartComponent } from './components/cart/cart.component';
+import { BillingFormComponent } from './components/billing-form/billing-form.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { CommunityComponent } from './components/community/community.component';
     SupportComponent,
     ContactComponent,
     JobsComponent,
-    CommunityComponent
+    CommunityComponent,
+    OrdersComponent,
+    CartComponent,
+    BillingFormComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +58,7 @@ import { CommunityComponent } from './components/community/community.component';
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

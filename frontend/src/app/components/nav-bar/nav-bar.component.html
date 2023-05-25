@@ -1,13 +1,15 @@
 <div class="topHalf">
-  <img src="assets/svg/logo-no-background.svg" class="logo" />
+  <a routerLink="/"
+    ><img src="assets/svg/logo-no-background.svg" class="logo"
+  /></a>
   <app-search-bar></app-search-bar>
   <div id="pages">
     <a href="/" class="pages"
-      >Profile
+      >Account
       <mat-icon>account_circle</mat-icon>
     </a>
-    <a href="/" class="pages">Orders<mat-icon>receipt-long</mat-icon></a>
-    <a href="/" class="pages">Cart <mat-icon>shopping_cart</mat-icon></a>
+    <a href="/orders" class="pages">Orders<mat-icon>receipt-long</mat-icon></a>
+    <a href="/cart" class="pages">Cart <mat-icon>shopping_cart</mat-icon></a>
   </div>
 </div>
 <div class="bottomHalf">

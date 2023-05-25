@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
-  public counter = 0;
-
-  public onClick() {
-    this.counter += 1;
-    console.log("Counter: ", this.counter)
-  }
 
   selectedItem: any;
 
+  constructor(public router: Router) {}
+
   onItemSelected(item: any) {
-    console.log("Received itemClicked event in AppComponent");
-    console.log("AM I EVER GETTING CALLED?");
     this.selectedItem = item;
   }
   

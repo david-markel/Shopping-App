@@ -1,0 +1,72 @@
+<form [formGroup]="billingForm" (ngSubmit)="onSubmit()" class="billing-form">
+  <h1>Billing Information</h1>
+
+  <div class="input-group-row">
+    <div class="input-group">
+      <label for="firstName">First Name</label>
+      <input formControlName="firstName" type="text" id="firstName" />
+    </div>
+
+    <div class="input-group">
+      <label for="lastName">Last Name</label>
+      <input formControlName="lastName" type="text" id="lastName" />
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label for="address1">Address 1</label>
+    <input formControlName="address1" type="text" id="address1" />
+  </div>
+
+  <div class="input-group">
+    <label for="address2">Address 2</label>
+    <input formControlName="address2" type="text" id="address2" />
+  </div>
+
+  <div class="input-group">
+    <label for="city">City</label>
+    <input formControlName="city" type="text" id="city" />
+  </div>
+
+  <div class="input-group-row">
+    <div class="input-group">
+      <label for="country">Country</label>
+      <select formControlName="country" id="country">
+        <option *ngFor="let country of countries" [value]="country">
+          {{ country }}
+        </option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="state">State</label>
+      <select formControlName="state" id="state">
+        <option *ngFor="let state of states" [value]="state">
+          {{ state }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label for="zipCode">Zip Code</label>
+    <input formControlName="zipCode" type="text" id="zipCode" />
+  </div>
+
+  <div class="input-group">
+    <label for="cardNumber">Card Number</label>
+    <input formControlName="cardNumber" type="text" id="cardNumber" />
+  </div>
+
+  <div class="input-group">
+    <label for="cardExpiry">Card Expiry (MM/YY)</label>
+    <input formControlName="cardExpiry" type="text" id="cardExpiry" />
+  </div>
+
+  <div class="input-group">
+    <label for="cardCVV">Card CVV</label>
+    <input formControlName="cardCVV" type="text" id="cardCVV" />
+  </div>
+
+  <button type="submit">Checkout</button>
+</form>

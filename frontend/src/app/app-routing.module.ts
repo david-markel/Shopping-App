@@ -6,6 +6,8 @@ import { SupportComponent } from './components/support/support.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { CommunityComponent } from './components/community/community.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/category/movies', pathMatch: 'full' },
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'jobs', component: JobsComponent },
-  { path: 'community', component: CommunityComponent }
+  { path: 'community', component: CommunityComponent },
+  { path: 'orders', component: OrdersComponent},
+  { path: 'cart', component: CartComponent}
 ];
 
 @NgModule({

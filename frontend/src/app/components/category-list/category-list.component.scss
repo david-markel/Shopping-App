@@ -1,6 +1,4 @@
 .item-container {
-  background-image: url("../../../assets/DALLE/4lines.png");
-  background-size: cover;
   display: grid;
   grid-template-columns: repeat(4, 1fr); // This line creates a 4-column grid
   grid-gap: 0.5rem; // Adjust this value to control the gap between items

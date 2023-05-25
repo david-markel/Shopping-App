@@ -11,5 +11,28 @@ display: flex;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+  @mixin background-image($image-url) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url($image-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1;
+  }
+  
+  .cart-background {
+    @include background-image("../assets/DALLE/cartBackground.png");
+  }
+  
+  .category-background {
+    @include background-image("../assets/DALLE/4lines.png");
+  }
+  
+  
   
   

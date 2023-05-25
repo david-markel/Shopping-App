@@ -1,5 +1,10 @@
 <app-nav-bar></app-nav-bar>
 <div class="main-content">
+  <div *ngIf="router.url === '/cart'" class="cart-background"></div>
+  <div
+    *ngIf="router.url.includes('/category')"
+    class="category-background"
+  ></div>
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
