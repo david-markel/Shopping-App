@@ -8,6 +8,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { CommunityComponent } from './components/community/community.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/category/movies', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'jobs', component: JobsComponent },
   { path: 'community', component: CommunityComponent },
   { path: 'orders', component: OrdersComponent},
-  { path: 'cart', component: CartComponent}
+  { path: 'cart', component: CartComponent},
+  { path: 'account', component: AccountComponent}
 ];
 
 @NgModule({

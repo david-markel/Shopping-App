@@ -28,6 +28,7 @@ import { CommunityComponent } from './components/community/community.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { BillingFormComponent } from './components/billing-form/billing-form.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { BillingFormComponent } from './components/billing-form/billing-form.com
     CommunityComponent,
     OrdersComponent,
     CartComponent,
-    BillingFormComponent
+    BillingFormComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
