@@ -5,6 +5,7 @@
     *ngIf="router.url.includes('/category')"
     class="category-background"
   ></div>
+  <div *ngIf="router.url === '/orders'" class="orders-background"></div>
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

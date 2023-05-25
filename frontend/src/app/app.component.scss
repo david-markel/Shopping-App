@@ -32,6 +32,10 @@ display: flex;
   .category-background {
     @include background-image("../assets/DALLE/4lines.png");
   }
+
+  .orders-background {
+    @include background-image("../assets/DALLE/ordersBackground.png");
+  }
   
   
   
