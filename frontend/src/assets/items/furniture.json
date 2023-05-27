@@ -1,5 +1,4 @@
-{
-    "furniture": [
+[
     {
     "imageSrc": "itemImages/furniture/Sectional_Sofa.jpg",
     "title": "Sectional Sofa",
@@ -151,4 +150,3 @@
             "price": 249.99
             }
 ]
-}

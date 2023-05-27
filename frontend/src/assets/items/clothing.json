@@ -1,5 +1,4 @@
-{
-    "clothing": [
+[
         {
             "imageSrc": "itemImages/clothing/Mens_Black_TShirt.jpg",
             "title": "Men's Black T-Shirt",
@@ -175,4 +174,3 @@
             "price": 129.99
         }
     ]
-}

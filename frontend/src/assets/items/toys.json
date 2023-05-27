@@ -1,5 +1,4 @@
-{
-    "toys": [
+[
         {
             "imageSrc": "itemImages/toys/Lego_Star_Wars_Set.jpg",
             "title": "Lego Star Wars Set",
@@ -121,4 +120,3 @@
             "price": 24.99
         }
     ]
-}

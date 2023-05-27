@@ -1,5 +1,4 @@
-{
-    "movies": [
+[
         {
             "imageSrc": "itemImages/movies/The_Godfather.jpg",
             "title": "The Godfather",
@@ -121,4 +120,3 @@
             "price": 9.99
         }
     ]
-}

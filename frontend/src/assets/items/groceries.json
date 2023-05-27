@@ -1,5 +1,4 @@
-{
-    "groceries": [
+[
     {
     "imageSrc": "itemImages/groceries/Fresh_Fruit_Box.jpg",
     "title": "Fresh Fruit Box",
@@ -174,5 +173,4 @@
             "description": "A carton of coconut water, a refreshing and electrolyte-rich drink",
             "price": 2.99
             }
-]
-}
+        ]

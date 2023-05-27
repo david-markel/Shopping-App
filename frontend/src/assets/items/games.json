@@ -1,5 +1,4 @@
-{
-    "games": [
+[
         {
             "imageSrc": "itemImages/games/The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
             "title": "The Legend of Zelda: Breath of the Wild",
@@ -121,4 +120,3 @@
             "price": 0
         }
     ]
-}

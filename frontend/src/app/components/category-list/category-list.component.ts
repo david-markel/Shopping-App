@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ItemService } from 'src/app/services/item-service.service';
+import { ApiService } from 'src/app/services/api.service';  // Import the new ApiService
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,37 +8,37 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./category-list.component.scss']
 })
 export class CategoryListComponent implements OnInit {
-  jsonData: any;
+  items: any[] = []; // This will hold the items fetched from the backend
   category: string = 'movies';
   @Output() itemClicked = new EventEmitter<any>();
 
-onItemClick(item: any) {
-  this.itemClicked.emit(item);
-}
-  
+  onItemClick(item: any) {
+    this.itemClicked.emit(item);
+  }
 
-  constructor(private itemService: ItemService, private route: ActivatedRoute) {}
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {} // Inject the new ApiService
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => { // Change to this.route.params.subscribe
+    this.route.params.subscribe(params => {
       console.log('Route parameters changed:', params);
-      this.category = params['category']; // Access the value with params['category']
+      this.category = params['category'];
       this.loadData();
     });
   }
 
   loadData(): void {
-    const fileName = `${this.category}.json`; // Use the category as part of the file name
-    this.itemService.readJSONFile(fileName).subscribe(
-      (result: any) => {
-        this.jsonData = result;
-        this.jsonData[this.category] = this.jsonData[this.category].map((item: any) => {
+    // Call the getItemsCategory() method of the new ApiService
+    this.apiService.getItemsCategory(this.category).subscribe(
+      (items: any) => {
+        // The server sends back an array of items, so we don't need to do this.jsonData[this.category]
+        this.items = items.map((item: any) => {
           return {
             ...item,
+            // If your server returns the imageSrc field as a relative URL, you might need to adjust this
             imageSrc: '../../../assets/items/' + item.imageSrc,
           };
         });
-        console.log('Data:', this.jsonData);
+        console.log('Data:', this.items);
       },
       (error) => {
         console.error('Error:', error);

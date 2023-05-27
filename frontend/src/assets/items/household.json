@@ -1,5 +1,4 @@
-{
-    "household": [
+[
         {
             "imageSrc": "itemImages/household/Stainless_Steel_Cookware_Set.jpg",
             "title": "Stainless Steel Cookware Set",
@@ -157,4 +156,3 @@
             "price": 129.99
         }
     ]
-}
