@@ -4,10 +4,18 @@
   /></a>
   <app-search-bar></app-search-bar>
   <div id="pages">
-    <a href="/account" class="pages"
-      >Account
-      <mat-icon>account_circle</mat-icon>
-    </a>
+    <ng-container *ngIf="isAuthenticated$ | async; else showLogin">
+      <a href="/account" class="pages">
+        {{ user?.firstName }}
+        <mat-icon>account_circle</mat-icon>
+      </a>
+    </ng-container>
+    <ng-template #showLogin>
+      <a href="/login" class="pages">
+        Sign In
+        <mat-icon>account_circle</mat-icon>
+      </a>
+    </ng-template>
     <a href="/orders" class="pages">Orders<mat-icon>receipt-long</mat-icon></a>
     <a href="/cart" class="pages">Cart <mat-icon>shopping_cart</mat-icon></a>
   </div>

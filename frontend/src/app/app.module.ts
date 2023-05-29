@@ -29,6 +29,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { BillingFormComponent } from './components/billing-form/billing-form.component';
 import { AccountComponent } from './components/account/account.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { AccountComponent } from './components/account/account.component';
     OrdersComponent,
     CartComponent,
     BillingFormComponent,
-    AccountComponent
+    AccountComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,8 @@ import { CommunityComponent } from './components/community/community.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/category/movies', pathMatch: 'full' },
@@ -18,13 +20,15 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'jobs', component: JobsComponent },
   { path: 'community', component: CommunityComponent },
-  { path: 'orders', component: OrdersComponent},
-  { path: 'cart', component: CartComponent},
-  { path: 'account', component: AccountComponent}
+  { path: 'orders', component: OrdersComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'account', component: AccountComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

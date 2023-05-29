@@ -1,11 +1,11 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';  // Import the new ApiService
+import { ApiService } from 'src/app/services/api.service'; // Import the new ApiService
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
-  styleUrls: ['./category-list.component.scss']
+  styleUrls: ['./category-list.component.scss'],
 })
 export class CategoryListComponent implements OnInit {
   items: any[] = []; // This will hold the items fetched from the backend
@@ -19,7 +19,7 @@ export class CategoryListComponent implements OnInit {
   constructor(private apiService: ApiService, private route: ActivatedRoute) {} // Inject the new ApiService
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       console.log('Route parameters changed:', params);
       this.category = params['category'];
       this.loadData();
@@ -41,7 +41,7 @@ export class CategoryListComponent implements OnInit {
         console.log('Data:', this.items);
       },
       (error) => {
-        console.error('Error:', error);
+        // console.error('Error:', error);
       }
     );
   }
