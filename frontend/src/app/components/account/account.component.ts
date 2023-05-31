@@ -1,22 +1,28 @@
 // account.component.ts
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/interfaces';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss']
+  styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent implements OnInit {
-  user: any = {
-    name: '',
-    username: '',
-    email: '',
-    address: '',
-    subscription: 'Basic',
-  };
+  states = ['Alabama', 'Alaska', 'Arizona' /*...other states*/];
+  countries = ['United States', 'Canada', 'Mexico' /*...other countries*/];
 
-  constructor() { }
+  user: User = {} as User;
 
-  ngOnInit(): void {
+  isAuthenticated$ = this.authService.isAuthenticated;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.user.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
   }
 }

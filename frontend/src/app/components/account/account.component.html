@@ -1,38 +1,129 @@
 <!-- account.component.html -->
-<div class="container">
-  <h1>Your Account</h1>
+<form class="container">
+  <div class="update-form">
+    <h1>Your Account</h1>
 
-  <div class="account-content">
-    <form class="update-form">
-      <h2>Update Information</h2>
+    <div class="account-content">
+      <div class="right-content">
+        <h2>Update Address</h2>
 
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="user.name" />
+        <label for="address1">Address 1:</label>
+        <input
+          type="text"
+          id="address1"
+          name="address1"
+          [(ngModel)]="user.address.address1"
+          placeholder="{{ user.address.address1 }}"
+        />
 
-      <label for="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        [(ngModel)]="user.username"
-      />
+        <label for="address2">Address 2:</label>
+        <input
+          type="text"
+          id="address2"
+          name="address2"
+          [(ngModel)]="user.address.address2"
+          placeholder="{{ user.address.address2 }}"
+        />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" [(ngModel)]="user.email" />
+        <label for="city">City:</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          [(ngModel)]="user.address.city"
+          placeholder="{{ user.address.city }}"
+        />
 
-      <label for="address">Address:</label>
-      <input
-        type="text"
-        id="address"
-        name="address"
-        [(ngModel)]="user.address"
-      />
+        <div class="row">
+          <div class="third">
+            <label for="zipcode">Zipcode:</label>
+            <input
+              type="text"
+              id="zipcode"
+              name="zipcode"
+              [(ngModel)]="user.address.zipcode"
+              placeholder="{{ user.address.zipcode }}"
+            />
+          </div>
 
-      <button type="submit">Update</button>
-    </form>
+          <div class="third">
+            <label for="state">State:</label>
+            <select id="state" name="state" [(ngModel)]="user.address.state">
+              <option *ngFor="let state of states" [value]="state">
+                {{ state }}
+              </option>
+            </select>
+          </div>
 
-    <div class="right-content">
-      <form class="password-form">
+          <div class="third">
+            <label for="country">Country:</label>
+            <select
+              id="country"
+              name="country"
+              [(ngModel)]="user.address.country"
+            >
+              <option *ngFor="let country of countries" [value]="country">
+                {{ country }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="subscription">
+          <h2>Subscription</h2>
+          <div class="plans">
+            <div
+              class="plan"
+              [class.selected]="user.subscriptionPlan === 'basic'"
+              (click)="user.subscriptionPlan = 'basic'"
+            >
+              Basic
+            </div>
+            <div
+              class="plan"
+              [class.selected]="user.subscriptionPlan === 'premium'"
+              (click)="user.subscriptionPlan = 'premium'"
+            >
+              Premium
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="left-content">
+        <h2>Update Information</h2>
+
+        <div class="row">
+          <div class="half">
+            <label for="firstName">First Name:</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              [(ngModel)]="user.firstName"
+              placeholder="{{ user.firstName }}"
+            />
+          </div>
+          <div class="half">
+            <label for="lastName">Last Name:</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              [(ngModel)]="user.lastName"
+              placeholder="{{ user.lastName }}"
+            />
+          </div>
+        </div>
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          placeholder="{{ user.email }}"
+        />
+
         <h2>Change Password</h2>
 
         <label for="oldPassword">Old Password:</label>
@@ -40,15 +131,12 @@
 
         <label for="newPassword">New Password:</label>
         <input type="password" id="newPassword" name="newPassword" />
-
-        <button type="submit">Change Password</button>
-      </form>
-
-      <div class="subscription">
-        <h2>Your Subscription</h2>
-        <p>Current Plan: {{ user.subscription }}</p>
-        <button>Select New Plan</button>
       </div>
     </div>
+    <div class="button-group">
+      <button class="update-account-button">Update Account</button>
+      <button class="logout-button">Logout</button>
+      <button class="delete-button">Delete Account</button>
+    </div>
   </div>
-</div>
+</form>

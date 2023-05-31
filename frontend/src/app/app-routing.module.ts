@@ -11,7 +11,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/category/movies', pathMatch: 'full' },
   { path: 'category/:category', component: CategoryPageComponent },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'community', component: CommunityComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'account', component: AccountComponent },
+  { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 ];

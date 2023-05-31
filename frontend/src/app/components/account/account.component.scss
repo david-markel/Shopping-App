@@ -1,63 +1,139 @@
-/* account.component.css */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #333;
-    padding: 20px;
-  }
-  
-  h1, h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .account-content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .update-form, .password-form, .subscription {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  .right-content {
-    width: 100%;
-    margin-left: 20px;
-    display: grid;
-    grid-gap: 20px;
-  }
-  
-  label {
-    display: block;
-    margin: 10px 0 5px 0;
-  }
-  
-  input {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    color: #fff;
-    background-color: var(--primary-accent);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: var(--accent-hover);
-  }
-  
+  width: 80%; /* adjust to your liking */
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.update-form {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* adjust to your liking */
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.account-content {
+  display: flex;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.half {
+  width: 48%;
+}
+
+.subscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscription .plans {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.plan {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.plan:last-child {
+  margin-right: 0;
+}
+
+.plan.selected {
+  background-color: var(--primary-accent);
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px 0;
+}
+
+input,
+select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+}
+
+.third {
+  width: 32%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  width: 30%; /* Adjust as per your liking */
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.update-account-button {
+  background-color: var(--primary-accent);
+}
+
+.update-account-button:hover {
+  background-color: var(--accent-hover);
+}
+
+.logout-button {
+  background-color: #f6b93b;
+}
+
+.logout-button:hover {
+  background-color: #f1c40f;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}

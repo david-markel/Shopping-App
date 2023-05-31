@@ -3,6 +3,7 @@ const cors = require("cors");
 const MongoClient = require("mongodb").MongoClient;
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { ObjectId } = require("mongodb");
 require("dotenv").config();
 
 const secretKey = process.env.SECRET_KEY;
@@ -105,6 +106,77 @@ client
       } catch (err) {
         console.error(err);
         res.status(500).send("Error logging in");
+      }
+    });
+
+    app.put("/updateUser", async (req, res) => {
+      try {
+        const {
+          id,
+          firstName,
+          lastName,
+          email,
+          password,
+          subscriptionPlan,
+          address,
+        } = req.body;
+        const hashedPassword = bcrypt.hashSync(password, 8); // hash the password
+        const updatedUser = {
+          firstName,
+          lastName,
+          email,
+          password: hashedPassword,
+          subscriptionPlan,
+          address,
+        };
+
+        const result = await users.updateOne(
+          { _id: new MongoClient.ObjectId(id) },
+          { $set: updatedUser }
+        );
+
+        if (result.modifiedCount > 0) {
+          const updatedUserFromDB = await users.findOne({
+            _id: new MongoClient.ObjectId(id),
+          });
+          const token = jwt.sign(
+            {
+              id: updatedUserFromDB._id,
+              firstName: updatedUserFromDB.firstName,
+              lastName: updatedUserFromDB.lastName,
+              email: updatedUserFromDB.email,
+              subscriptionPlan: updatedUserFromDB.subscriptionPlan,
+              address: updatedUserFromDB.address,
+            },
+            secretKey,
+            { expiresIn: 86400 } // expires in 24 hours
+          );
+          res.send({ success: true, message: token });
+        } else {
+          throw new Error("User update failed");
+        }
+      } catch (err) {
+        console.error(err);
+        res.status(500).send("Error updating user");
+      }
+    });
+
+    app.delete("/deleteUser/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+
+        const result = await users.deleteOne({
+          _id: new MongoClient.ObjectId(id),
+        });
+
+        if (result.deletedCount > 0) {
+          res.send({ success: true, message: "User deleted successfully" });
+        } else {
+          throw new Error("User deletion failed");
+        }
+      } catch (err) {
+        console.error(err);
+        res.status(500).send("Error deleting user");
       }
     });
 
