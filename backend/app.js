@@ -251,6 +251,38 @@ client
       }
     });
 
+    app.get("/just-for-you", async (req, res) => {
+      try {
+        let items = [];
+        const collections = [
+          "furniture",
+          "clothing",
+          "household",
+          "movies",
+          "games",
+          "toys",
+          "groceries",
+        ];
+
+        for (const collection of collections) {
+          const collItems = await db.collection(collection).find({}).toArray();
+          items = items.concat(collItems);
+        }
+
+        // Shuffle items
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+
+        // Return only the first 9 items
+        res.send(items.slice(0, 9));
+      } catch (err) {
+        console.error(err);
+        res.status(500).send("Error retrieving items from database");
+      }
+    });
+
     app.listen(port, () => {
       console.log(`Server listening at http://localhost:${port}`);
     });
