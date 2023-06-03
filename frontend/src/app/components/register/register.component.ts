@@ -21,7 +21,7 @@ export class RegisterComponent {
     this.authService.register(this.user).subscribe(
       (response) => {
         if (response.success) {
-          console.log(response.message);
+          //   console.log(response.message);
           // navigate to home page
           this.router.navigate(['/']);
         } else {

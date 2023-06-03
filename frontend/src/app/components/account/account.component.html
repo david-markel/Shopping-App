@@ -1,5 +1,5 @@
 <!-- account.component.html -->
-<form class="container">
+<form class="container" (submit)="$event.preventDefault()">
   <div class="update-form">
     <h1>Your Account</h1>
 
@@ -68,26 +68,6 @@
             </select>
           </div>
         </div>
-
-        <div class="subscription">
-          <h2>Subscription</h2>
-          <div class="plans">
-            <div
-              class="plan"
-              [class.selected]="user.subscriptionPlan === 'basic'"
-              (click)="user.subscriptionPlan = 'basic'"
-            >
-              Basic
-            </div>
-            <div
-              class="plan"
-              [class.selected]="user.subscriptionPlan === 'premium'"
-              (click)="user.subscriptionPlan = 'premium'"
-            >
-              Premium
-            </div>
-          </div>
-        </div>
       </div>
       <div class="left-content">
         <h2>Update Information</h2>
@@ -124,19 +104,42 @@
           placeholder="{{ user.email }}"
         />
 
-        <h2>Change Password</h2>
-
-        <label for="oldPassword">Old Password:</label>
-        <input type="password" id="oldPassword" name="oldPassword" />
-
         <label for="newPassword">New Password:</label>
-        <input type="password" id="newPassword" name="newPassword" />
+        <input
+          type="password"
+          id="newPassword"
+          name="newPassword"
+          [(ngModel)]="user.password"
+        />
+
+        <label for="subscription">Subscription:</label>
+        <div class="row">
+          <div
+            class="plan"
+            [class.selected]="user.subscriptionPlan === 'basic'"
+            (click)="user.subscriptionPlan = 'basic'"
+          >
+            Basic
+          </div>
+          <div
+            class="plan"
+            [class.selected]="user.subscriptionPlan === 'premium'"
+            (click)="user.subscriptionPlan = 'premium'"
+          >
+            Premium
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="button-group">
-      <button class="update-account-button">Update Account</button>
-      <button class="logout-button">Logout</button>
-      <button class="delete-button">Delete Account</button>
+      <button class="update-account-button" (click)="updateAccount()">
+        Update Account
+      </button>
+      <button class="logout-button" (click)="onLogout()">Logout</button>
+      <button class="delete-button" (click)="deleteAccount()">
+        Delete Account
+      </button>
     </div>
   </div>
 </form>

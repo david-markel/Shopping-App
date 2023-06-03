@@ -62,4 +62,41 @@ export class AuthService {
     this.isAuthenticatedSubject.next(false);
     this.userSubject.next(null);
   }
+
+  updateAccount(user: User): Observable<RegisterResponse> {
+    return this.http
+      .put<RegisterResponse>(`${this.apiUrl}/updateUser`, user)
+      .pipe(
+        tap((response) => {
+          if (response.success) {
+            localStorage.setItem('token', response.message);
+            const decodedToken = this.jwtHelper.decodeToken(response.message);
+            this.userSubject.next(decodedToken);
+            this.isAuthenticatedSubject.next(true);
+          }
+        })
+      );
+  }
+
+  // Delete User Method
+  deleteAccount(id: string): Observable<{ success: boolean; message: string }> {
+    return this.http
+      .delete<{ success: boolean; message: string }>(
+        `${this.apiUrl}/deleteUser/${id}`
+      )
+      .pipe(
+        tap((response) => {
+          if (response.success) {
+            this.logout();
+          }
+        })
+      );
+  }
+
+  validatePassword(id: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/validatePassword`, {
+      id,
+      password,
+    });
+  }
 }

@@ -20,7 +20,6 @@ export class CategoryListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      console.log('Route parameters changed:', params);
       this.category = params['category'];
       this.loadData();
     });

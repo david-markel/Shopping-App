@@ -21,6 +21,7 @@ export interface User {
   email: string;
   password: string;
   subscriptionPlan: string;
+  id: string;
   address: {
     address1: string;
     address2: string;

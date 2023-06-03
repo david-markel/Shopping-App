@@ -1,9 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-const MongoClient = require("mongodb").MongoClient;
+const { MongoClient, ObjectId } = require("mongodb");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { ObjectId } = require("mongodb");
 require("dotenv").config();
 
 const secretKey = process.env.SECRET_KEY;
@@ -26,31 +25,39 @@ client
     const users = db.collection("users"); // Assuming "users" is your users collection
 
     app.post("/register", async (req, res) => {
-      try {
-        const { firstName, lastName, email, password } = req.body;
-        const hashedPassword = bcrypt.hashSync(password, 8); // hash the password
-        const user = {
-          firstName,
-          lastName,
-          email,
-          password: hashedPassword,
-          subscriptionPlan: "free",
-          address: {
-            address1: "",
-            address2: "",
-            city: "",
-            state: "",
-            country: "",
-            zipcode: "",
-          },
-        };
+      console.log("Register endpoint hit, received request body: ", req.body);
 
-        // Insert new user
+      const { firstName, lastName, email, password } = req.body;
+      const hashedPassword = bcrypt.hashSync(password, 8); // hash the password
+
+      console.log("Password hashed successfully.");
+
+      const user = {
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword,
+        subscriptionPlan: "basic",
+        address: {
+          address1: "",
+          address2: "",
+          city: "",
+          state: "",
+          country: "",
+          zipcode: "",
+        },
+      };
+
+      try {
+        console.log("Attempting to insert user into database.");
         const result = await users.insertOne(user);
 
-        // If insert was successful, result.ops[0] will contain the newly created user document
-        if (result.ops[0]) {
-          const newUser = result.ops[0];
+        console.log("Insertion result: ", result);
+
+        if (result.acknowledged) {
+          console.log("Inserted ID: ", result.insertedId);
+          const newUser = await users.findOne({ _id: result.insertedId });
+
           const token = jwt.sign(
             {
               id: newUser._id,
@@ -63,19 +70,23 @@ client
             secretKey,
             { expiresIn: 86400 } // expires in 24 hours
           );
+          console.log(
+            "User registered successfully, returning success response."
+          );
           res.send({ success: true, message: token });
         } else {
           throw new Error("User registration failed");
         }
       } catch (err) {
-        console.error(err);
+        console.error("Error during user registration: ", err);
 
-        // Catch the MongoDB error when email already exists
         if (err.code === 11000) {
+          console.log("Email already exists, returning error response.");
           res
             .status(409)
             .send({ success: false, message: "Email already exists" });
         } else {
+          console.log("Returning generic server error.");
           res.status(500).send("Error registering user");
         }
       }
@@ -120,24 +131,30 @@ client
           subscriptionPlan,
           address,
         } = req.body;
-        const hashedPassword = bcrypt.hashSync(password, 8); // hash the password
-        const updatedUser = {
-          firstName,
-          lastName,
-          email,
-          password: hashedPassword,
-          subscriptionPlan,
-          address,
-        };
+
+        let updatedFields = {};
+
+        if (firstName !== undefined) updatedFields.firstName = firstName;
+        if (lastName !== undefined) updatedFields.lastName = lastName;
+        if (email !== undefined) updatedFields.email = email;
+        if (password !== undefined)
+          updatedFields.password = bcrypt.hashSync(password, 8); // hash the password only if provided
+        if (subscriptionPlan !== undefined)
+          updatedFields.subscriptionPlan = subscriptionPlan;
+        if (address !== undefined) updatedFields.address = address;
+
+        if (Object.keys(updatedFields).length === 0) {
+          return res.send({ message: "No changes were made" });
+        }
 
         const result = await users.updateOne(
-          { _id: new MongoClient.ObjectId(id) },
-          { $set: updatedUser }
+          { _id: new ObjectId(id) },
+          { $set: updatedFields }
         );
 
         if (result.modifiedCount > 0) {
           const updatedUserFromDB = await users.findOne({
-            _id: new MongoClient.ObjectId(id),
+            _id: new ObjectId(id),
           });
           const token = jwt.sign(
             {
@@ -166,7 +183,7 @@ client
         const { id } = req.params;
 
         const result = await users.deleteOne({
-          _id: new MongoClient.ObjectId(id),
+          _id: new ObjectId(id),
         });
 
         if (result.deletedCount > 0) {
@@ -177,6 +194,23 @@ client
       } catch (err) {
         console.error(err);
         res.status(500).send("Error deleting user");
+      }
+    });
+
+    app.post("/validatePassword", async (req, res) => {
+      const { id, password } = req.body;
+      try {
+        const user = await db
+          .collection("users")
+          .findOne({ _id: new ObjectId(id) });
+        if (user && (await bcrypt.compare(password, user.password))) {
+          res.json({ success: true });
+        } else {
+          res.json({ success: false });
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("Server error");
       }
     });
 

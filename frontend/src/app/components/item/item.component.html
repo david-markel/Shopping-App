@@ -1,6 +1,11 @@
 <div class="item">
   <div class="image-container">
-    <img [src]="props.imageSrc" alt="" class="itemImages" />
+    <img
+      [src]="props.imageSrc"
+      alt=""
+      class="itemImages"
+      onerror="this.onerror=null;this.src='/assets/svg/logo-color.svg';"
+    />
   </div>
   <div class="content-container">
     <h2>{{ props.title }}</h2>

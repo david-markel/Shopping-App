@@ -6,7 +6,7 @@
 }
 
 .update-form {
-  background-color: #f9f9f9;
+  //   background-color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px; /* adjust to your liking */
@@ -63,6 +63,7 @@ h2 {
   cursor: pointer;
   border-radius: 5px;
   border: 1px solid #ddd;
+  background-color: #fff;
 }
 
 .plan:last-child {
@@ -70,7 +71,7 @@ h2 {
 }
 
 .plan.selected {
-  background-color: var(--primary-accent);
+  background-color: var(--primary-brown);
   color: #fff;
 }
 

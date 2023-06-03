@@ -32,7 +32,7 @@
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #28a745;
+    background-color: var(--primary-accent);
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -40,7 +40,7 @@
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #218838;
+      background-color: var(--accent-hover);
     }
   }
 }
