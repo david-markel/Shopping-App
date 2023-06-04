@@ -56,6 +56,25 @@
 .description-container {
   overflow-y: auto;
   max-height: calc(50vh - 10rem);
+
+  &::-webkit-scrollbar {
+    width: 10px; // Width of the scrollbar
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--secondary-grey); // Color of the track
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-brown); // Color of the scrollbar thumb
+    border-radius: 10px; // Roundness of the scrollbar thumb
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(
+      --primary-brown-hover
+    ); // Color when hovered over the scrollbar thumb
+  }
 }
 
 .rating-container {

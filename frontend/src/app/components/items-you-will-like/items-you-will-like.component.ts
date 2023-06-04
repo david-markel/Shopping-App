@@ -1,13 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ApiService } from 'src/app/services/api.service';
-
-interface ItemData {
-  imageSrc: string;
-  title: string;
-  description: string;
-  price: number;
-}
+import { ItemData } from 'src/app/models/interfaces';
 
 const fadeIn = trigger('fadeIn', [
   transition(':enter', [

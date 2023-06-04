@@ -24,6 +24,7 @@ export class CategoryPageComponent {
   }
 
   navbarHeight = 146;
+  footerHeight = 150;
   topOffset = this.navbarHeight;
 
   @HostListener('window:scroll', [])
@@ -32,6 +33,20 @@ export class CategoryPageComponent {
       window.scrollY ||
       window.pageYOffset ||
       document.documentElement.scrollTop;
-    this.topOffset = scrollY >= this.navbarHeight ? 0 : this.navbarHeight;
+    const viewportHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    if (scrollY >= this.navbarHeight) {
+      this.topOffset = 0;
+    } else {
+      this.topOffset = this.navbarHeight;
+    }
+
+    if (scrollY + viewportHeight >= documentHeight - this.footerHeight) {
+      this.topOffset = Math.min(
+        this.topOffset,
+        documentHeight - scrollY - viewportHeight - this.footerHeight
+      );
+    }
   }
 }

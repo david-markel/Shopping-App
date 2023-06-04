@@ -3,6 +3,7 @@ export interface ItemData {
   title: string;
   description: string;
   price: number;
+  rating: number;
 }
 
 export interface RegisterResponse {

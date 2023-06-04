@@ -1,14 +1,22 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-item-detail',
   templateUrl: './item-detail.component.html',
-  styleUrls: ['./item-detail.component.scss']
+  styleUrls: ['./item-detail.component.scss'],
 })
-export class ItemDetailComponent implements OnInit {
+export class ItemDetailComponent implements OnInit, OnChanges {
   @Input() selectedItem: any;
   @Output() closeButtonClick = new EventEmitter<void>();
-  
+
   rating: number = 0;
   filledStars: number[] = [];
   emptyStars: number[] = [];
@@ -18,12 +26,14 @@ export class ItemDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.rating = this.randomRating();
-    this.updateStars();
+    console.log('Selected Item:', this.selectedItem);
   }
 
-  randomRating(): number {
-    return 1 + Math.random() * 4;
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['selectedItem']) {
+      this.rating = this.selectedItem?.rating || 0;
+      this.updateStars();
+    }
   }
 
   updateStars() {

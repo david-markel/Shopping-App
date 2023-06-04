@@ -12,12 +12,12 @@
   transition: transform 0.3s ease-in-out, max-width 0.3s ease-in-out; // Add a smooth transition for max-width property
 }
 
-
 .with-selected-item .content {
-  transform: translateX(-0%); // Adjust this value to control how much the content is pushed to the left
+  transform: translateX(
+    -0%
+  ); // Adjust this value to control how much the content is pushed to the left
   max-width: 70%; // Adjust this value to control the maximum width of the content when an item is selected
 }
-
 
 app-item-detail {
   width: 30%;
@@ -25,11 +25,14 @@ app-item-detail {
   opacity: 0;
   visibility: hidden;
   pointer-events: none; // Prevent interaction with the hidden item-detail component
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out, top 0.3s ease-in-out;
 }
 
 .with-selected-item app-item-detail {
-  transform: translateX(235%); // Adjust this value to control how much the item detail is moved to the right
+  transform: translateX(
+    235%
+  ); // Adjust this value to control how much the item detail is moved to the right
 }
 
 .visible {
