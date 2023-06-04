@@ -21,4 +21,8 @@ export class ApiService {
   getJustForYouItems(): Observable<any> {
     return this.http.get(`${this.BASE_URL}/just-for-you`);
   }
+
+  searchItems(query: string): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/search/${query}`);
+  }
 }

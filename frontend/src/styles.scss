@@ -29,10 +29,57 @@ $frontend-theme: mat.define-light-theme(
   )
 );
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($frontend-theme);
+$primary-brown: #d9bca9;
+
+// Define your custom palette
+$custom-primary: mat.define-palette(
+  (
+    50: lighten($primary-brown, 50%),
+    100: lighten($primary-brown, 40%),
+    200: lighten($primary-brown, 30%),
+    300: lighten($primary-brown, 20%),
+    400: lighten($primary-brown, 10%),
+    500: $primary-brown,
+    600: darken($primary-brown, 10%),
+    700: darken($primary-brown, 20%),
+    800: darken($primary-brown, 30%),
+    900: darken($primary-brown, 40%),
+    A100: lighten($primary-brown, 30%),
+    A200: lighten($primary-brown, 20%),
+    A400: lighten($primary-brown, 10%),
+    A700: darken($primary-brown, 10%),
+    contrast: (
+      50: black,
+      100: black,
+      200: black,
+      300: black,
+      400: black,
+      500: white,
+      600: white,
+      700: white,
+      800: white,
+      900: white,
+      A100: black,
+      A200: black,
+      A400: black,
+      A700: white,
+    ),
+  )
+);
+
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $frontend-accent,
+      // Replace with your own accent palette if needed
+      warn: $frontend-warn,
+      // Replace with your own warn palette if needed
+    ),
+  )
+);
+
+@include mat.all-component-themes($custom-theme);
 
 :root {
   --primary-grey: #202020;

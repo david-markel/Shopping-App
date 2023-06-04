@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./category-list.component.scss'],
 })
 export class CategoryListComponent implements OnInit {
-  items: any[] = []; // This will hold the items fetched from the backend
+  items: any[] = [];
   category: string = 'movies';
   @Output() itemClicked = new EventEmitter<any>();
 
@@ -16,32 +16,64 @@ export class CategoryListComponent implements OnInit {
     this.itemClicked.emit(item);
   }
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) {} // Inject the new ApiService
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.category = params['category'];
-      this.loadData();
+      if (params['query']) {
+        const searchQuery = params['query'];
+        this.apiService.searchItems(searchQuery).subscribe(
+          (items: any) => {
+            this.items = items.map((item: any) => {
+              return {
+                ...item,
+                imageSrc: '../../../assets/items/' + item.imageSrc,
+              };
+            });
+            console.log('Data:', this.items);
+          },
+          (error) => {
+            // console.error('Error:', error);
+          }
+        );
+      } else if (params['category']) {
+        this.category = params['category'];
+        this.loadData();
+      }
     });
   }
 
   loadData(): void {
-    // Call the getItemsCategory() method of the new ApiService
-    this.apiService.getItemsCategory(this.category).subscribe(
-      (items: any) => {
-        // The server sends back an array of items, so we don't need to do this.jsonData[this.category]
-        this.items = items.map((item: any) => {
-          return {
-            ...item,
-            // If your server returns the imageSrc field as a relative URL, you might need to adjust this
-            imageSrc: '../../../assets/items/' + item.imageSrc,
-          };
-        });
-        console.log('Data:', this.items);
-      },
-      (error) => {
-        // console.error('Error:', error);
-      }
-    );
+    if (this.category === 'all') {
+      this.apiService.getAllItems().subscribe(
+        (items: any) => {
+          this.items = items.map((item: any) => {
+            return {
+              ...item,
+              imageSrc: '../../../assets/items/' + item.imageSrc,
+            };
+          });
+          console.log('Data:', this.items);
+        },
+        (error) => {
+          // console.error('Error:', error);
+        }
+      );
+    } else {
+      this.apiService.getItemsCategory(this.category).subscribe(
+        (items: any) => {
+          this.items = items.map((item: any) => {
+            return {
+              ...item,
+              imageSrc: '../../../assets/items/' + item.imageSrc,
+            };
+          });
+          console.log('Data:', this.items);
+        },
+        (error) => {
+          // console.error('Error:', error);
+        }
+      );
+    }
   }
 }

@@ -13,8 +13,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
-  { path: '', redirectTo: '/category/movies', pathMatch: 'full' },
+  { path: '', redirectTo: '/category/all', pathMatch: 'full' },
   { path: 'category/:category', component: CategoryPageComponent },
+  { path: 'search/:query', component: CategoryPageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'support', component: SupportComponent },
   { path: 'contact', component: ContactComponent },

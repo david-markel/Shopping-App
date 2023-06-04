@@ -2,7 +2,7 @@
 <div class="main-content">
   <div *ngIf="router.url === '/cart'" class="cart-background"></div>
   <div
-    *ngIf="router.url.includes('/category')"
+    *ngIf="router.url.includes('/category') || router.url.includes('/search')"
     class="category-background"
   ></div>
   <div *ngIf="router.url === '/orders'" class="orders-background"></div>

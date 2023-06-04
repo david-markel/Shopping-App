@@ -251,6 +251,42 @@ client
       }
     });
 
+    app.get("/search/:query", async (req, res) => {
+      try {
+        const query = req.params.query;
+        const collections = [
+          "clothing",
+          "furniture",
+          "games",
+          "groceries",
+          "household",
+          "movies",
+          "toys",
+        ];
+        let results = [];
+
+        console.log(`Received search query: ${query}`);
+
+        for (const collection of collections) {
+          console.log(`Searching in collection: ${collection}`);
+          const searchResults = await db
+            .collection(collection)
+            .find({ $text: { $search: query } })
+            .toArray();
+          console.log(
+            `Found ${searchResults.length} result(s) in collection: ${collection}`
+          );
+          results = results.concat(searchResults);
+        }
+
+        console.log(`Total results found: ${results.length}`);
+        res.send(results);
+      } catch (err) {
+        console.error("Error occurred during search: ", err);
+        res.status(500).send("Error retrieving items from database");
+      }
+    });
+
     app.get("/just-for-you", async (req, res) => {
       try {
         let items = [];

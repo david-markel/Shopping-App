@@ -3,8 +3,19 @@
   style="margin-bottom: -1.25em; width: 40vw; margin-right: 30px"
   appearance="fill"
 >
-  <input matInput type="text" placeholder="Search Markelo" />
-  <button matSuffix mat-icon-button aria-label="Clear">
+  <input
+    matInput
+    type="text"
+    placeholder="Search Markelo"
+    [(ngModel)]="searchQuery"
+    (keydown.enter)="performSearch()"
+  />
+  <button
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    [routerLink]="['/search', searchQuery]"
+  >
     <mat-icon>search</mat-icon>
   </button>
 </mat-form-field>

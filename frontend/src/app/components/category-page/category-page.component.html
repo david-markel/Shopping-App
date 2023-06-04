@@ -1,6 +1,7 @@
 <div class="category-page" [ngClass]="{ 'with-selected-item': selectedItem }">
   <div class="content">
     <app-items-you-will-like
+      *ngIf="!isSearchRoute"
       class="itemsYouWillLike"
       style="display: flex; justify-content: center; align-items: center"
       (itemClicked)="onItemSelected($event)"
