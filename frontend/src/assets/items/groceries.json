@@ -1,176 +1,176 @@
 [
     {
-    "imageSrc": "itemImages/groceries/Fresh_Fruit_Box.jpg",
-    "title": "Fresh Fruit Box",
-    "description": "A box of assorted fresh fruit including apples, bananas, oranges, and more",
-    "price": 29.99
+        "imageSrc": "itemImages\\groceries\\Fresh_Fruit_Box.jpg",
+        "title": "Fresh Fruit Box",
+        "description": "A box of assorted fresh fruit including apples, bananas, oranges, and more",
+        "price": 29.99
     },
     {
-    "imageSrc": "itemImages/groceries/Grass_Fed_Ground_Beef.jpg",
-    "title": "Grass-Fed Ground Beef",
-    "description": "One pound of grass-fed ground beef for a healthy and delicious meal",
-    "price": 9.99
+        "imageSrc": "itemImages\\groceries\\GrassFed_Ground_Beef.jpg",
+        "title": "Grass-Fed Ground Beef",
+        "description": "One pound of grass-fed ground beef for a healthy and delicious meal",
+        "price": 9.99
     },
     {
-    "imageSrc": "itemImages/groceries/Free_Range_Eggs.jpg",
-    "title": "Free-Range Eggs",
-    "description": "A dozen free-range eggs for a healthier and tastier option",
-    "price": 3.99
+        "imageSrc": "itemImages\\groceries\\FreeRange_Eggs.jpg",
+        "title": "Free-Range Eggs",
+        "description": "A dozen free-range eggs for a healthier and tastier option",
+        "price": 3.99
     },
     {
-    "imageSrc": "itemImages/groceries/Whole_Grain_Bread.jpg",
-    "title": "Whole Grain Bread",
-    "description": "A loaf of whole-grain bread for a nutritious and delicious sandwich",
-    "price": 4.99
+        "imageSrc": "itemImages\\groceries\\Whole_Grain_Bread.jpg",
+        "title": "Whole Grain Bread",
+        "description": "A loaf of whole-grain bread for a nutritious and delicious sandwich",
+        "price": 4.99
     },
     {
-    "imageSrc": "itemImages/groceries/Organic_Milk.jpg",
-    "title": "Organic Milk",
-    "description": "A half-gallon of organic milk for a healthier and fresher option",
-    "price": 3.99
+        "imageSrc": "itemImages\\groceries\\Organic_Milk.jpg",
+        "title": "Organic Milk",
+        "description": "A half-gallon of organic milk for a healthier and fresher option",
+        "price": 3.99
     },
     {
-    "imageSrc": "itemImages/groceries/Almond_Butter.jpg",
-    "title": "Almond Butter",
-    "description": "A jar of creamy almond butter made from 100% organic almonds",
-    "price": 7.99
+        "imageSrc": "itemImages\\groceries\\Almond_Butter.jpg",
+        "title": "Almond Butter",
+        "description": "A jar of creamy almond butter made from 100% organic almonds",
+        "price": 7.99
     },
     {
-    "imageSrc": "itemImages/groceries/Quinoa.jpg",
-    "title": "Quinoa",
-    "description": "A bag of quinoa, a protein-rich and gluten-free grain",
-    "price": 5.99
+        "imageSrc": "itemImages\\groceries\\Quinoa.jpg",
+        "title": "Quinoa",
+        "description": "A bag of quinoa, a protein-rich and gluten-free grain",
+        "price": 5.99
     },
     {
-    "imageSrc": "itemImages/groceries/Avocado.jpg",
-    "title": "Avocado",
-    "description": "A ripe avocado, perfect for guacamole or a healthy snack",
-    "price": 1.99
+        "imageSrc": "itemImages\\groceries\\Avocado.jpg",
+        "title": "Avocado",
+        "description": "A ripe avocado, perfect for guacamole or a healthy snack",
+        "price": 1.99
     },
     {
-    "imageSrc": "itemImages/groceries/Chia_Seeds.jpg",
-    "title": "Chia Seeds",
-    "description": "A bag of chia seeds, packed with fiber and omega-3 fatty acids",
-    "price": 6.99
+        "imageSrc": "itemImages\\groceries\\Chia_Seeds.jpg",
+        "title": "Chia Seeds",
+        "description": "A bag of chia seeds, packed with fiber and omega-3 fatty acids",
+        "price": 6.99
     },
     {
-    "imageSrc": "itemImages/groceries/Coconut_Oil.jpg",
-    "title": "Coconut Oil",
-    "description": "A jar of organic coconut oil, perfect for cooking or as a moisturizer",
-    "price": 8.99
+        "imageSrc": "itemImages\\groceries\\Coconut_Oil.jpg",
+        "title": "Coconut Oil",
+        "description": "A jar of organic coconut oil, perfect for cooking or as a moisturizer",
+        "price": 8.99
     },
     {
-    "imageSrc": "itemImages/groceries/Protein_Bar.jpg",
-    "title": "Protein Bar",
-    "description": "A box of protein bars, great for a quick and healthy snack on-the-go",
-    "price": 19.99
+        "imageSrc": "itemImages\\groceries\\Protein_Bar.jpg",
+        "title": "Protein Bar",
+        "description": "A box of protein bars, great for a quick and healthy snack on-the-go",
+        "price": 19.99
     },
     {
-    "imageSrc": "itemImages/groceries/Green_Tea.jpg",
-    "title": "Green Tea",
-    "description": "A box of green tea, rich in antioxidants and great for boosting metabolism",
-    "price": 3.99
+        "imageSrc": "itemImages\\groceries\\Green_Tea.jpg",
+        "title": "Green Tea",
+        "description": "A box of green tea, rich in antioxidants and great for boosting metabolism",
+        "price": 3.99
     },
     {
-        "imageSrc": "itemImages/groceries/Almond_Milk.jpg",
+        "imageSrc": "itemImages\\groceries\\Almond_Milk.jpg",
         "title": "Almond Milk",
         "description": "A carton of almond milk, a dairy-free and vegan milk alternative",
         "price": 2.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Spinach.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Spinach.jpg",
         "title": "Spinach",
         "description": "A bag of fresh spinach, perfect for salads, smoothies, and more",
         "price": 3.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Organic_Apples.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Organic_Apples.jpg",
         "title": "Organic Apples",
         "description": "A bag of organic apples, perfect for snacking and baking",
         "price": 5.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Brown_Rice.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Brown_Rice.jpg",
         "title": "Brown Rice",
         "description": "A bag of brown rice, a healthy and filling option for meals",
         "price": 4.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Salmon_Fillet.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Salmon_Fillet.jpg",
         "title": "Salmon Fillet",
         "description": "A fresh salmon fillet, rich in omega-3 fatty acids and great for a healthy meal",
         "price": 12.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Hummus.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Hummus.jpg",
         "title": "Hummus",
         "description": "A tub of classic hummus, a healthy and delicious dip for vegetables or crackers",
         "price": 4.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Whole_Wheat_Pasta.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Whole_Wheat_Pasta.jpg",
         "title": "Whole Wheat Pasta",
         "description": "A box of whole wheat pasta, a healthier option for pasta dishes",
         "price": 3.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Organic_Baby_Spinach.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Organic_Baby_Spinach.jpg",
         "title": "Organic Baby Spinach",
         "description": "A bag of organic baby spinach, perfect for salads and sandwiches",
         "price": 4.99
-        },
-        {
+    },
+    {
         "imageSrc": "itemImages/groceries/Steel_Cut_Oats.jpg",
         "title": "Steel-Cut Oats",
         "description": "A bag of steel-cut oats, a nutritious and filling option for breakfast",
         "price": 6.99
-        },
-        {
-        "imageSrc": "itemImages/groceries/Cage_Free_Eggs.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\CageFree_Eggs.jpg",
         "title": "Cage-Free Eggs",
         "description": "A dozen cage-free eggs, a more ethical and healthier option",
         "price": 4.99
-        },
-        {
-            "imageSrc": "itemImages/groceries/Frozen_Berries.jpg",
-            "title": "Frozen Berries",
-            "description": "A bag of mixed frozen berries, perfect for smoothies and desserts",
-            "price": 6.99
-            },
-            {
-            "imageSrc": "itemImages/groceries/Whole_Chicken.jpg",
-            "title": "Whole Chicken",
-            "description": "A whole chicken, perfect for roasting or grilling",
-            "price": 10.99
-            },
-            {
-            "imageSrc": "itemImages/groceries/Greek_Yogurt.jpg",
-            "title": "Greek Yogurt",
-            "description": "A tub of plain Greek yogurt, high in protein and great for breakfast or snacks",
-            "price": 3.99
-            },
-            {
-            "imageSrc": "itemImages/groceries/Cauliflower_Rice.jpg",
-            "title": "Cauliflower Rice",
-            "description": "A bag of cauliflower rice, a low-carb and healthy option for rice dishes",
-            "price": 4.99
-            },
-            {
-            "imageSrc": "itemImages/groceries/Black_Beans.jpg",
-            "title": "Black Beans",
-            "description": "A can of black beans, a versatile and protein-rich ingredient for many meals",
-            "price": 1.99
-            },
-            {
-            "imageSrc": "itemImages/groceries/Sweet_Potatoes.jpg",
-            "title": "Sweet Potatoes",
-            "description": "A bag of sweet potatoes, a nutritious and delicious option for many dishes",
-            "price": 3.99
-            },
-            {
-            "imageSrc": "itemImages/groceries/Coconut_Water.jpg",
-            "title": "Coconut Water",
-            "description": "A carton of coconut water, a refreshing and electrolyte-rich drink",
-            "price": 2.99
-            }
-        ]
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Frozen_Berries.jpg",
+        "title": "Frozen Berries",
+        "description": "A bag of mixed frozen berries, perfect for smoothies and desserts",
+        "price": 6.99
+    },
+    {
+        "imageSrc": "itemImages/groceries/Whole_Chicken.jpg",
+        "title": "Whole Chicken",
+        "description": "A whole chicken, perfect for roasting or grilling",
+        "price": 10.99
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Greek_Yogurt.jpg",
+        "title": "Greek Yogurt",
+        "description": "A tub of plain Greek yogurt, high in protein and great for breakfast or snacks",
+        "price": 3.99
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Cauliflower_Rice.jpg",
+        "title": "Cauliflower Rice",
+        "description": "A bag of cauliflower rice, a low-carb and healthy option for rice dishes",
+        "price": 4.99
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Black_Beans.jpg",
+        "title": "Black Beans",
+        "description": "A can of black beans, a versatile and protein-rich ingredient for many meals",
+        "price": 1.99
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Sweet_Potatoes.jpg",
+        "title": "Sweet Potatoes",
+        "description": "A bag of sweet potatoes, a nutritious and delicious option for many dishes",
+        "price": 3.99
+    },
+    {
+        "imageSrc": "itemImages\\groceries\\Coconut_Water.jpg",
+        "title": "Coconut Water",
+        "description": "A carton of coconut water, a refreshing and electrolyte-rich drink",
+        "price": 2.99
+    }
+]

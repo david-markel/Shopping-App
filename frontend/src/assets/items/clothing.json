@@ -1,176 +1,176 @@
 [
-        {
-            "imageSrc": "itemImages/clothing/Mens_Black_TShirt.jpg",
-            "title": "Men's Black T-Shirt",
-            "description": "A classic black t-shirt made from soft cotton for everyday wear",
-            "price": 19.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_White_Blouse.jpg",
-            "title": "Women's White Blouse",
-            "description": "A stylish white blouse made from lightweight fabric for a comfortable and chic look",
-            "price": 39.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Dress_Shirt.jpg",
-            "title": "Men's Dress Shirt",
-            "description": "A crisp white dress shirt made from high-quality cotton for a professional look",
-            "price": 49.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Denim_Jacket.jpg",
-            "title": "Women's Denim Jacket",
-            "description": "A trendy denim jacket with a vintage wash and distressed details for a cool and casual look",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Black_Leather_Jacket.jpg",
-            "title": "Men's Black Leather Jacket",
-            "description": "A classic black leather jacket with a sleek and stylish design for a bold statement",
-            "price": 129.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Black_Leggings.jpg",
-            "title": "Women's Black Leggings",
-            "description": "Comfortable and stretchy black leggings made from soft fabric for all-day wear",
-            "price": 24.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Sports_Jersey.jpg",
-            "title": "Men's Sports Jersey",
-            "description": "A lightweight and breathable sports jersey for a comfortable and stylish look during exercise",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Summer_Dress.jpg",
-            "title": "Women's Summer Dress",
-            "description": "A flowy and comfortable summer dress with a fun and playful pattern for a cute and stylish look",
-            "price": 34.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Sweatpants.jpg",
-            "title": "Men's Sweatpants",
-            "description": "Soft and cozy sweatpants with a relaxed fit for comfortable lounging or light exercise",
-            "price": 24.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Leather_Boots.jpg",
-            "title": "Women's Leather Boots",
-            "description": "Stylish and comfortable leather boots with a low heel and versatile design for everyday wear",
-            "price": 79.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Suit.jpg",
-            "title": "Men's Suit",
-            "description": "A sharp and stylish two-piece suit for formal occasions",
-            "price": 299.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Dress.jpg",
-            "title": "Women's Dress",
-            "description": "A classic and elegant dress with a flattering fit for any formal event",
-            "price": 149.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Polo_Shirt.jpg",
-            "title": "Men's Polo Shirt",
-            "description": "A classic and versatile polo shirt made from high-quality cotton for a comfortable fit",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Leather_Jacket.jpg",
-            "title": "Women's Leather Jacket",
-            "description": "A sleek and stylish leather jacket with a fitted design for a chic and edgy look",
-            "price": 199.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Casual_Shorts.jpg",
-            "title": "Men's Casual Shorts",
-            "description": "Comfortable and stylish casual shorts made from lightweight fabric for a relaxed summer look",
-            "price": 39.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Sweater.jpg",
-            "title": "Women's Sweater",
-            "description": "A cozy and warm sweater made from soft fabric for a comfortable and stylish look",
-            "price": 49.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Leather_Shoes.jpg",
-            "title": "Men's Leather Shoes",
-            "description": "A stylish and versatile pair of leather shoes for any formal or casual occasion",
-            "price": 99.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Jeans.jpg",
-            "title": "Women's Jeans",
-            "description": "A classic and versatile pair of jeans made from high-quality denim for a comfortable fit",
-            "price": 79.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Mens_Denim_Jacket.jpg",
-            "title": "Men's Denim Jacket",
-            "description": "A trendy and stylish denim jacket with a relaxed fit for a casual and cool look",
-            "price": 69.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Womens_Sports_Bra.jpg",
-            "title": "Women's Sports Bra",
-            "description": "A supportive and comfortable sports bra with moisture-wicking fabric for a dry and comfortable workout",
-            "price": 24.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Hoodie.jpg",
-            "title": "Hoodie",
-            "description": "A comfortable and warm hoodie for everyday wear",
-            "price": 49.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Winter_Coat.jpg",
-            "title": "Winter Coat",
-            "description": "A warm and durable winter coat to keep you cozy in cold weather",
-            "price": 149.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Jeans.jpg",
-            "title": "Jeans",
-            "description": "A classic pair of jeans with a comfortable and flattering fit",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Sweater.jpg",
-            "title": "Sweater",
-            "description": "A soft and cozy sweater for a relaxed and comfortable look",
-            "price": 39.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Blouse.jpg",
-            "title": "Blouse",
-            "description": "A stylish and versatile blouse for any occasion",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Running_Shoes.jpg",
-            "title": "Running Shoes",
-            "description": "A pair of comfortable and supportive running shoes for a great workout",
-            "price": 79.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Formal_Dress.jpg",
-            "title": "Formal Dress",
-            "description": "A beautiful and elegant formal dress for a special occasion",
-            "price": 199.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/TShirt.jpg",
-            "title": "T-Shirt",
-            "description": "A comfortable and casual t-shirt for everyday wear",
-            "price": 19.99
-        },
-        {
-            "imageSrc": "itemImages/clothing/Leather_Boots.jpg",
-            "title": "Leather Boots",
-            "description": "A stylish and durable pair of leather boots for any outfit",
-            "price": 129.99
-        }
-    ]
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Black_TShirt.jpg",
+        "title": "Men's Black T-Shirt",
+        "description": "A classic black t-shirt made from soft cotton for everyday wear",
+        "price": 19.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_White_Blouse.jpg",
+        "title": "Women's White Blouse",
+        "description": "A stylish white blouse made from lightweight fabric for a comfortable and chic look",
+        "price": 39.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Dress_Shirt.jpg",
+        "title": "Men's Dress Shirt",
+        "description": "A crisp white dress shirt made from high-quality cotton for a professional look",
+        "price": 49.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Denim_Jacket.jpg",
+        "title": "Women's Denim Jacket",
+        "description": "A trendy denim jacket with a vintage wash and distressed details for a cool and casual look",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Black_Leather_Jacket.jpg",
+        "title": "Men's Black Leather Jacket",
+        "description": "A classic black leather jacket with a sleek and stylish design for a bold statement",
+        "price": 129.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Black_Leggings.jpg",
+        "title": "Women's Black Leggings",
+        "description": "Comfortable and stretchy black leggings made from soft fabric for all-day wear",
+        "price": 24.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Sports_Jersey.jpg",
+        "title": "Men's Sports Jersey",
+        "description": "A lightweight and breathable sports jersey for a comfortable and stylish look during exercise",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Summer_Dress.jpg",
+        "title": "Women's Summer Dress",
+        "description": "A flowy and comfortable summer dress with a fun and playful pattern for a cute and stylish look",
+        "price": 34.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Sweatpants.jpg",
+        "title": "Men's Sweatpants",
+        "description": "Soft and cozy sweatpants with a relaxed fit for comfortable lounging or light exercise",
+        "price": 24.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Leather_Boots.jpg",
+        "title": "Women's Leather Boots",
+        "description": "Stylish and comfortable leather boots with a low heel and versatile design for everyday wear",
+        "price": 79.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Suit.jpg",
+        "title": "Men's Suit",
+        "description": "A sharp and stylish two-piece suit for formal occasions",
+        "price": 299.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Dress.jpg",
+        "title": "Women's Dress",
+        "description": "A classic and elegant dress with a flattering fit for any formal event",
+        "price": 149.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Polo_Shirt.jpg",
+        "title": "Men's Polo Shirt",
+        "description": "A classic and versatile polo shirt made from high-quality cotton for a comfortable fit",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Leather_Jacket.jpg",
+        "title": "Women's Leather Jacket",
+        "description": "A sleek and stylish leather jacket with a fitted design for a chic and edgy look",
+        "price": 199.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Casual_Shorts.jpg",
+        "title": "Men's Casual Shorts",
+        "description": "Comfortable and stylish casual shorts made from lightweight fabric for a relaxed summer look",
+        "price": 39.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Sweater.jpg",
+        "title": "Women's Sweater",
+        "description": "A cozy and warm sweater made from soft fabric for a comfortable and stylish look",
+        "price": 49.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Leather_Shoes.jpg",
+        "title": "Men's Leather Shoes",
+        "description": "A stylish and versatile pair of leather shoes for any formal or casual occasion",
+        "price": 99.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Jeans.jpg",
+        "title": "Women's Jeans",
+        "description": "A classic and versatile pair of jeans made from high-quality denim for a comfortable fit",
+        "price": 79.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Mens_Denim_Jacket.jpg",
+        "title": "Men's Denim Jacket",
+        "description": "A trendy and stylish denim jacket with a relaxed fit for a casual and cool look",
+        "price": 69.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Womens_Sports_Bra.jpg",
+        "title": "Women's Sports Bra",
+        "description": "A supportive and comfortable sports bra with moisture-wicking fabric for a dry and comfortable workout",
+        "price": 24.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Hoodie.jpg",
+        "title": "Hoodie",
+        "description": "A comfortable and warm hoodie for everyday wear",
+        "price": 49.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Winter_Coat.jpg",
+        "title": "Winter Coat",
+        "description": "A warm and durable winter coat to keep you cozy in cold weather",
+        "price": 149.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Jeans.jpg",
+        "title": "Jeans",
+        "description": "A classic pair of jeans with a comfortable and flattering fit",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Sweater.jpg",
+        "title": "Sweater",
+        "description": "A soft and cozy sweater for a relaxed and comfortable look",
+        "price": 39.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Blouse.jpg",
+        "title": "Blouse",
+        "description": "A stylish and versatile blouse for any occasion",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Running_Shoes.jpg",
+        "title": "Running Shoes",
+        "description": "A pair of comfortable and supportive running shoes for a great workout",
+        "price": 79.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Formal_Dress.jpg",
+        "title": "Formal Dress",
+        "description": "A beautiful and elegant formal dress for a special occasion",
+        "price": 199.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\TShirt.jpg",
+        "title": "T-Shirt",
+        "description": "A comfortable and casual t-shirt for everyday wear",
+        "price": 19.99
+    },
+    {
+        "imageSrc": "itemImages\\clothing\\Leather_Boots.jpg",
+        "title": "Leather Boots",
+        "description": "A stylish and durable pair of leather boots for any outfit",
+        "price": 129.99
+    }
+]

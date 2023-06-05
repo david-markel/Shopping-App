@@ -1,122 +1,122 @@
 [
-        {
-            "imageSrc": "itemImages/games/The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
-            "title": "The Legend of Zelda: Breath of the Wild",
-            "description": "An action-adventure game where players control Link and explore the vast open world of Hyrule",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Red_Dead_Redemption_2.jpg",
-            "title": "Red Dead Redemption 2",
-            "description": "An action-adventure game set in the Wild West, where players control outlaw Arthur Morgan and his gang",
-            "price": 49.99
-        },
-        {
-            "imageSrc": "itemImages/games/The_Last_of_Us_Part_II.jpg",
-            "title": "The Last of Us Part II",
-            "description": "A post-apocalyptic action-adventure game where players control Ellie and explore a world ravaged by a fungal pandemic",
-            "price": 39.99
-        },
-        {
-            "imageSrc": "itemImages/games/Super_Mario_Odyssey.jpg",
-            "title": "Super Mario Odyssey",
-            "description": "A 3D platformer where players control Mario and travel to various kingdoms to save Princess Peach from Bowser",
-            "price": 49.99
-        },
-        {
-            "imageSrc": "itemImages/games/Fortnite.jpg",
-            "title": "Fortnite",
-            "description": "A battle royale game where players fight to be the last one standing in a shrinking play area",
-            "price": 0
-        },
-        {
-            "imageSrc": "itemImages/games/Call_of_Duty_Modern_Warfare.jpg",
-            "title": "Call of Duty: Modern Warfare",
-            "description": "A first-person shooter game where players engage in modern warfare scenarios",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Minecraft.jpg",
-            "title": "Minecraft",
-            "description": "A sandbox game where players can build and explore a blocky, procedurally-generated 3D world",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/games/Animal_Crossing_New_Horizons.jpg",
-            "title": "Animal Crossing: New Horizons",
-            "description": "A life simulation game where players build and customize their own island paradise",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Grand_Theft_Auto_V.jpg",
-            "title": "Grand Theft Auto V",
-            "description": "An action-adventure game where players control three characters in the fictional city of Los Santos",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/games/The_Elder_Scrolls_V_Skyrim.jpg",
-            "title": "The Elder Scrolls V: Skyrim",
-            "description": "An action role-playing game set in the open world of Skyrim, where players can explore and complete quests",
-            "price": 39.99
-        },
-        {
-            "imageSrc": "itemImages/games/Overwatch.jpg",
-            "title": "Overwatch",
-            "description": "A team-based multiplayer first-person shooter game with a diverse cast of characters",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/games/The_Witcher_3_Wild_Hunt.jpg",
-            "title": "The Witcher 3: Wild Hunt",
-            "description": "An action role-playing game where players control Geralt of Rivia and hunt monsters in a vast open world",
-            "price": 39.99
-        },
-        {
-            "imageSrc": "itemImages/games/Pokemon_Sword__Shield.jpg",
-            "title": "Pokemon Sword & Shield",
-            "description": "A role-playing game where players explore the Galar region and collect and battle Pokemon",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Assassins_Creed_Valhalla.jpg",
-            "title": "Assassin's Creed Valhalla",
-            "description": "An action role-playing game where players control a Viking raider and explore England during the Dark Ages",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Super_Smash_Bros_Ultimate.jpg",
-            "title": "Super Smash Bros. Ultimate",
-            "description": "A fighting game where players control various Nintendo characters and battle on a 2D plane",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Hades.jpg",
-            "title": "Hades",
-            "description": "An action role-playing game where players control Zagreus and try to escape the underworld",
-            "price": 24.99
-        },
-        {
-            "imageSrc": "itemImages/games/Resident_Evil_Village.jpg",
-            "title": "Resident Evil Village",
-            "description": "A survival horror game where players control Ethan Winters and explore a mysterious village",
-            "price": 59.99
-        },
-        {
-            "imageSrc": "itemImages/games/Death_Stranding.jpg",
-            "title": "Death Stranding",
-            "description": "An action game where players control Sam Bridges and deliver packages in a post-apocalyptic America",
-            "price": 49.99
-        },
-        {
-            "imageSrc": "itemImages/games/Fallout_4.jpg",
-            "title": "Fallout 4",
-            "description": "An action role-playing game set in a post-apocalyptic Boston where players try to find their missing son",
-            "price": 29.99
-        },
-        {
-            "imageSrc": "itemImages/games/League_of_Legends.jpg",
-            "title": "League of Legends",
-            "description": "A multiplayer online battle arena game where players control champions and battle against other teams",
-            "price": 0
-        }
-    ]
+    {
+        "imageSrc": "itemImages\\games\\The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
+        "title": "The Legend of Zelda: Breath of the Wild",
+        "description": "An action-adventure game where players control Link and explore the vast open world of Hyrule",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Red_Dead_Redemption_2.jpg",
+        "title": "Red Dead Redemption 2",
+        "description": "An action-adventure game set in the Wild West, where players control outlaw Arthur Morgan and his gang",
+        "price": 49.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\The_Last_of_Us_Part_II.jpg",
+        "title": "The Last of Us Part II",
+        "description": "A post-apocalyptic action-adventure game where players control Ellie and explore a world ravaged by a fungal pandemic",
+        "price": 39.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Super_Mario_Odyssey.jpg",
+        "title": "Super Mario Odyssey",
+        "description": "A 3D platformer where players control Mario and travel to various kingdoms to save Princess Peach from Bowser",
+        "price": 49.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Fortnite.jpg",
+        "title": "Fortnite",
+        "description": "A battle royale game where players fight to be the last one standing in a shrinking play area",
+        "price": 0
+    },
+    {
+        "imageSrc": "itemImages\\games\\Call_of_Duty_Modern_Warfare.jpg",
+        "title": "Call of Duty: Modern Warfare",
+        "description": "A first-person shooter game where players engage in modern warfare scenarios",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Minecraft.jpg",
+        "title": "Minecraft",
+        "description": "A sandbox game where players can build and explore a blocky, procedurally-generated 3D world",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Animal_Crossing_New_Horizons.jpg",
+        "title": "Animal Crossing: New Horizons",
+        "description": "A life simulation game where players build and customize their own island paradise",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Grand_Theft_Auto_V.jpg",
+        "title": "Grand Theft Auto V",
+        "description": "An action-adventure game where players control three characters in the fictional city of Los Santos",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\The_Elder_Scrolls_V_Skyrim.jpg",
+        "title": "The Elder Scrolls V: Skyrim",
+        "description": "An action role-playing game set in the open world of Skyrim, where players can explore and complete quests",
+        "price": 39.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Overwatch.jpg",
+        "title": "Overwatch",
+        "description": "A team-based multiplayer first-person shooter game with a diverse cast of characters",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\The_Witcher_3_Wild_Hunt.jpg",
+        "title": "The Witcher 3: Wild Hunt",
+        "description": "An action role-playing game where players control Geralt of Rivia and hunt monsters in a vast open world",
+        "price": 39.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Pokemon_Sword__Shield.jpg",
+        "title": "Pokemon Sword & Shield",
+        "description": "A role-playing game where players explore the Galar region and collect and battle Pokemon",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Assassins_Creed_Valhalla.jpg",
+        "title": "Assassin's Creed Valhalla",
+        "description": "An action role-playing game where players control a Viking raider and explore England during the Dark Ages",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Super_Smash_Bros_Ultimate.jpg",
+        "title": "Super Smash Bros. Ultimate",
+        "description": "A fighting game where players control various Nintendo characters and battle on a 2D plane",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Hades.jpg",
+        "title": "Hades",
+        "description": "An action role-playing game where players control Zagreus and try to escape the underworld",
+        "price": 24.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Resident_Evil_Village.jpg",
+        "title": "Resident Evil Village",
+        "description": "A survival horror game where players control Ethan Winters and explore a mysterious village",
+        "price": 59.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Death_Stranding.jpg",
+        "title": "Death Stranding",
+        "description": "An action game where players control Sam Bridges and deliver packages in a post-apocalyptic America",
+        "price": 49.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\Fallout_4.jpg",
+        "title": "Fallout 4",
+        "description": "An action role-playing game set in a post-apocalyptic Boston where players try to find their missing son",
+        "price": 29.99
+    },
+    {
+        "imageSrc": "itemImages\\games\\League_of_Legends.jpg",
+        "title": "League of Legends",
+        "description": "A multiplayer online battle arena game where players control champions and battle against other teams",
+        "price": 0
+    }
+]

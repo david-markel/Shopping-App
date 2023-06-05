@@ -1,91 +1,126 @@
 import json
 import os
 import re
+import time
 import requests
 import argparse
 from googleapiclient.discovery import build
 
 
 # Replace with your own API key and custom search engine ID
-API_KEY = 'AIzaSyBqTZBlRm2oo0oeSGucqBU9rfxm_yKSkQM'
-CSE_ID = '9474cccd5b9324cef'
+API_KEY = "AIzaSyBqTZBlRm2oo0oeSGucqBU9rfxm_yKSkQM"
+CSE_ID = "9474cccd5b9324cef"
 
-# PEXELS_API_KEY = "YOUR_PEXELS_API_KEY"
+excluded_sources = set()  # Keep track of excluded sources
 
 parser = argparse.ArgumentParser(
-    description="Download images for items in a JSON file.")
+    description="Download images for items in a JSON file."
+)
 parser.add_argument("json_file", help="Path to the input JSON file.")
 args = parser.parse_args()
 
-# Load your items from the specified JSON file
 with open(args.json_file, "r") as f:
-    items_data = json.load(f)
+    items = json.load(f)
 
-# Get the key name based on the JSON file name
-json_name = os.path.splitext(os.path.basename(args.json_file))[0]
-items = items_data[json_name]
-
-# Create a subdirectory in itemImages based on the JSON file name
-image_folder = os.path.join("itemImages", json_name)
+image_folder = os.path.join(
+    "itemImages", os.path.splitext(os.path.basename(args.json_file))[0]
+)
 os.makedirs(image_folder, exist_ok=True)
 
 
-def search_image(query, api_key, cse_id, num_results=1):
+def search_image(query, api_key, cse_id, excluded_sources, num_results=1):
     service = build("customsearch", "v1", developerKey=api_key)
-    result = service.cse().list(q=query, cx=cse_id,
-                                searchType="image", num=num_results).execute()
-    return result['items'][0]['link']
 
+    # Exclude problematic sources from search
+    cx = cse_id + ":" + "-".join(excluded_sources)
 
-# def search_image(query, api_key):
-#     headers = {"Authorization": api_key}
-#     params = {"query": query, "per_page": 1,
-#               "page": 1, "orientation": "landscape"}
-#     response = requests.get(
-#         "https://api.pexels.com/v1/search", headers=headers, params=params)
-#     response.raise_for_status()
-#     result = response.json()
-#     return result['photos'][0]['src']['medium']
+    result = (
+        service.cse()
+        .list(q=query, cx=cx, searchType="image", num=num_results)
+        .execute()
+    )
+    return result["items"][0]["link"]
 
 
 def download_image(url, save_path):
-    response = requests.get(url, stream=True)
+    response = requests.get(url, stream=True, timeout=10)
     response.raise_for_status()
-
     with open(save_path, "wb") as f:
         for chunk in response.iter_content(chunk_size=8192):
             f.write(chunk)
 
 
 def clean_title(title):
-    # Remove special characters and replace spaces with underscores
     cleaned_title = re.sub(r"[^\w\s]", "", title)
     return cleaned_title.replace(" ", "_")
 
 
-for item in items:
-    try:
-        print(f"Fetching image for: {item['title']}")
+max_retry = 3
+retry_delay = 10  # seconds
 
-        # Fetch the image URL from Google Search Images API
-        image_url = search_image(item["title"], API_KEY, CSE_ID)
-        print(f"Image URL: {image_url}")
+try:
+    for item in items:
+        try:
+            image_src = item["imageSrc"]
+            cleaned_title = clean_title(item["title"])
+            save_path = os.path.join(image_folder, f"{cleaned_title}.jpg")
 
-        # Download the image and save it to your desired location
-        cleaned_title = clean_title(item["title"])
-        save_path = os.path.join(image_folder, f"{cleaned_title}.jpg")
-        download_image(image_url, save_path)
-        print(f"Image saved as: {save_path}")
+            if not os.path.exists(save_path):
+                print(f"Fetching image for: {item['title']}")
 
-        # Update the imageSrc in the item
-        item["imageSrc"] = save_path
+                # Retry mechanism
+                for retry in range(max_retry):
+                    try:
+                        image_url = search_image(
+                            item["title"], API_KEY, CSE_ID, excluded_sources
+                        )
+                        break  # Break the loop if successful
+                    except Exception as e:
+                        excluded_sources.add(CSE_ID)  # Exclude the problematic source
+                        print(
+                            f"Error fetching image for {item['title']} from Google Images (Retry {retry+1}/{max_retry}): {e}"
+                        )
+                        if retry < max_retry - 1:
+                            print(f"Retrying in {retry_delay} seconds...")
+                            time.sleep(retry_delay)
 
-    except Exception as e:
-        print(f"Error fetching image for {item['title']}: {e}")
-        continue
+                if not image_url:
+                    print(
+                        f"Failed to fetch image for {item['title']} from Google Images. Skipping..."
+                    )
+                    continue
 
-# Save the updated JSON object to the JSON file
+                print(f"Image URL: {image_url}")
+
+                # Retry mechanism
+                for retry in range(max_retry):
+                    try:
+                        download_image(image_url, save_path)
+                        break  # Break the loop if successful
+                    except Exception as e:
+                        print(
+                            f"Error downloading image for {item['title']} (Retry {retry+1}/{max_retry}): {e}"
+                        )
+                        if retry < max_retry - 1:
+                            print(f"Retrying in {retry_delay} seconds...")
+                            time.sleep(retry_delay)
+
+                if not os.path.exists(save_path):
+                    print(f"Failed to download image for {item['title']}. Skipping...")
+                    continue
+
+                print(f"Image saved as: {save_path}")
+
+            item["imageSrc"] = save_path
+
+        except Exception as e:
+            print(f"Error processing item {item['title']}: {e}")
+            continue
+
+except KeyboardInterrupt:
+    print("\nProcess interrupted by user.")
+
 with open(args.json_file, "w") as f:
-    json.dump(items_data, f, indent=4)
+    json.dump(items, f, indent=4)
 
 print("All images fetched and saved.")

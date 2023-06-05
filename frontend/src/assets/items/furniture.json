@@ -1,152 +1,146 @@
 [
     {
-    "imageSrc": "itemImages/furniture/Sectional_Sofa.jpg",
-    "title": "Sectional Sofa",
-    "description": "A spacious sectional sofa with chaise, perfect for lounging or entertaining",
-    "price": 1299.99
+        "imageSrc": "itemImages\\furniture\\Sectional_Sofa.jpg",
+        "title": "Sectional Sofa",
+        "description": "A spacious sectional sofa with chaise, perfect for lounging or entertaining",
+        "price": 1299.99
     },
     {
-    "imageSrc": "itemImages/furniture/Queen_Platform_Bed.jpg",
-    "title": "Queen Platform Bed",
-    "description": "A stylish and sturdy queen platform bed, perfect for modern bedrooms",
-    "price": 599.99
+        "imageSrc": "itemImages\\furniture\\Queen_Platform_Bed.jpg",
+        "title": "Queen Platform Bed",
+        "description": "A stylish and sturdy queen platform bed, perfect for modern bedrooms",
+        "price": 599.99
     },
     {
-    "imageSrc": "itemImages/furniture/Lounge_Chair.jpg",
-    "title": "Lounge Chair",
-    "description": "A comfortable and stylish lounge chair, perfect for a reading nook or living room",
-    "price": 499.99
+        "imageSrc": "itemImages\\furniture\\Lounge_Chair.jpg",
+        "title": "Lounge Chair",
+        "description": "A comfortable and stylish lounge chair, perfect for a reading nook or living room",
+        "price": 499.99
     },
     {
-    "imageSrc": "itemImages/furniture/Console_Table.jpg",
-    "title": "Console Table",
-    "description": "A sleek and versatile console table, great for entryways or behind sofas",
-    "price": 299.99
+        "imageSrc": "itemImages\\furniture\\Console_Table.jpg",
+        "title": "Console Table",
+        "description": "A sleek and versatile console table, great for entryways or behind sofas",
+        "price": 299.99
     },
     {
-    "imageSrc": "itemImages/furniture/Office_Chair.jpg",
-    "title": "Office Chair",
-    "description": "An ergonomic and comfortable office chair, perfect for long workdays",
-    "price": 249.99
+        "imageSrc": "itemImages\\furniture\\Office_Chair.jpg",
+        "title": "Office Chair",
+        "description": "An ergonomic and comfortable office chair, perfect for long workdays",
+        "price": 249.99
     },
     {
-    "imageSrc": "itemImages/furniture/Dining_Table.jpg",
-    "title": "Dining Table",
-    "description": "A beautiful and sturdy dining table, great for family dinners and entertaining",
-    "price": 799.99
+        "imageSrc": "itemImages\\furniture\\Dining_Table.jpg",
+        "title": "Dining Table",
+        "description": "A beautiful and sturdy dining table, great for family dinners and entertaining",
+        "price": 799.99
     },
     {
-    "imageSrc": "itemImages/furniture/Accent_Chair.jpg",
-    "title": "Accent Chair",
-    "description": "A unique and stylish accent chair, perfect for adding personality to any room",
-    "price": 399.99
+        "imageSrc": "itemImages\\furniture\\Accent_Chair.jpg",
+        "title": "Accent Chair",
+        "description": "A unique and stylish accent chair, perfect for adding personality to any room",
+        "price": 399.99
     },
     {
-    "imageSrc": "itemImages/furniture/Bookshelf.jpg",
-    "title": "Bookshelf",
-    "description": "A sturdy and spacious bookshelf, perfect for storing and displaying books and decorative items",
-    "price": 499.99
+        "imageSrc": "itemImages\\furniture\\Bookshelf.jpg",
+        "title": "Bookshelf",
+        "description": "A sturdy and spacious bookshelf, perfect for storing and displaying books and decorative items",
+        "price": 499.99
     },
     {
-    "imageSrc": "itemImages/furniture/Coffee_Table.jpg",
-    "title": "Coffee Table",
-    "description": "A sleek and modern coffee table, great for holding drinks, snacks, and decorative items",
-    "price": 299.99
+        "imageSrc": "itemImages\\furniture\\Coffee_Table.jpg",
+        "title": "Coffee Table",
+        "description": "A sleek and modern coffee table, great for holding drinks, snacks, and decorative items",
+        "price": 299.99
     },
     {
-    "imageSrc": "itemImages/furniture/Nightstand.jpg",
-    "title": "Nightstand",
-    "description": "A stylish and functional nightstand, great for holding books, lamps, and other bedside essentials",
-    "price": 199.99
+        "imageSrc": "itemImages\\furniture\\Nightstand.jpg",
+        "title": "Nightstand",
+        "description": "A stylish and functional nightstand, great for holding books, lamps, and other bedside essentials",
+        "price": 199.99
     },
     {
-    "imageSrc": "itemImages/furniture/Bar_Cabinet.jpg",
-    "title": "Bar Cabinet",
-    "description": "A sophisticated and functional bar cabinet, great for storing and displaying liquor and barware",
-    "price": 899.99
+        "imageSrc": "itemImages\\furniture\\Bar_Cabinet.jpg",
+        "title": "Bar Cabinet",
+        "description": "A sophisticated and functional bar cabinet, great for storing and displaying liquor and barware",
+        "price": 899.99
     },
     {
-        "imageSrc": "itemImages/furniture/Recliner_Chair.jpg",
+        "imageSrc": "itemImages\\furniture\\Recliner_Chair.jpg",
         "title": "Recliner Chair",
         "description": "A comfortable and relaxing recliner chair, perfect for movie nights and lounging",
         "price": 499.99
-        },
-        {
-        "imageSrc": "itemImages/furniture/King_Platform_Bed.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\King_Platform_Bed.jpg",
         "title": "King Platform Bed",
         "description": "A stylish and sturdy king platform bed, perfect for modern bedrooms",
         "price": 799.99
-        },
-        {
-        "imageSrc": "itemImages/furniture/Round_Dining_Table.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Round_Dining_Table.jpg",
         "title": "Round Dining Table",
         "description": "A beautiful and spacious round dining table, great for intimate dinners and entertaining",
         "price": 699.99
-        },
-        {
-        "imageSrc": "itemImages/furniture/Storage_Bench.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Storage_Bench.jpg",
         "title": "Storage Bench",
         "description": "A functional and stylish storage bench, great for entryways and bedrooms",
         "price": 299.99
-        },
-        {
-        "imageSrc": "itemImages/furniture/Armchair.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Armchair.jpg",
         "title": "Armchair",
         "description": "A comfortable and classic armchair, perfect for a cozy reading corner or living room",
         "price": 399.99
-        },
-        {
-        "imageSrc": "itemImages/furniture/Bar_Stools.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Bar_Stools.jpg",
         "title": "Bar Stools",
         "description": "A set of stylish and comfortable bar stools, great for kitchen islands and home bars",
         "price": 199.99
-        },
-        {
-        "imageSrc": "itemImages/furniture/Chaise_Lounge.jpg",
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Chaise_Lounge.jpg",
         "title": "Chaise Lounge",
         "description": "A luxurious and stylish chaise lounge, great for relaxing and reading",
         "price": 699.99
-        },
-        {
-            "imageSrc": "itemImages/furniture/Modular_Shelving.jpg",
-            "title": "Modular Shelving",
-            "description": "A versatile and modern modular shelving system, great for organizing and displaying items",
-            "price": 599.99
-            },
-            {
-            "imageSrc": "itemImages/furniture/Sofa_Bed.jpg",
-            "title": "Sofa Bed",
-            "description": "A comfortable and functional sofa bed, perfect for accommodating guests",
-            "price": 899.99
-            },
-            {
-            "imageSrc": "itemImages/furniture/Writing_Desk.jpg",
-            "title": "Writing Desk",
-            "description": "A stylish and functional writing desk, great for home offices and bedrooms",
-            "price": 399.99
-            },
-            {
-            "imageSrc": "itemImages/furniture/Bar_Cart.jpg",
-            "title": "Bar Cart",
-            "description": "A sleek and stylish bar cart, great for serving drinks and entertaining",
-            "price": 299.99
-            },
-            {
-            "imageSrc": "itemImages/furniture/Sectional_Sleeper_Sofa.jpg",
-            "title": "Sectional Sleeper Sofa",
-            "description": "A comfortable and spacious sectional sleeper sofa, great for accommodating guests",
-            "price": 1699.99
-            },
-            {
-            "imageSrc": "itemImages/furniture/Cocktail_Table.jpg",
-            "title": "Cocktail Table",
-            "description": "A chic and modern cocktail table, great for holding drinks and decorative items",
-            "price": 499.99
-            },
-            {
-            "imageSrc": "itemImages/furniture/Entryway_Table.jpg",
-            "title": "Entryway Table",
-            "description": "A stylish and functional entryway table, great for holding keys, mail, and other essentials",
-            "price": 249.99
-            }
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Modular_Shelving.jpg",
+        "title": "Modular Shelving",
+        "description": "A versatile and modern modular shelving system, great for organizing and displaying items",
+        "price": 599.99
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Sofa_Bed.jpg",
+        "title": "Sofa Bed",
+        "description": "A comfortable and functional sofa bed, perfect for accommodating guests",
+        "price": 899.99
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Bar_Cart.jpg",
+        "title": "Bar Cart",
+        "description": "A sleek and stylish bar cart, great for serving drinks and entertaining",
+        "price": 299.99
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Sectional_Sleeper_Sofa.jpg",
+        "title": "Sectional Sleeper Sofa",
+        "description": "A comfortable and spacious sectional sleeper sofa, great for accommodating guests",
+        "price": 1699.99
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Cocktail_Table.jpg",
+        "title": "Cocktail Table",
+        "description": "A chic and modern cocktail table, great for holding drinks and decorative items",
+        "price": 499.99
+    },
+    {
+        "imageSrc": "itemImages\\furniture\\Entryway_Table.jpg",
+        "title": "Entryway Table",
+        "description": "A stylish and functional entryway table, great for holding keys, mail, and other essentials",
+        "price": 249.99
+    }
 ]
