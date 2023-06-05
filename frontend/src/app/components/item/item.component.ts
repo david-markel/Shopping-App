@@ -19,5 +19,6 @@ export class ItemComponent {
     description: '',
     price: 0,
     rating: 0,
+    id: '',
   };
 }

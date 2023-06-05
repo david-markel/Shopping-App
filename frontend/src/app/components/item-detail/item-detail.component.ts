@@ -7,6 +7,10 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { ApiService } from 'src/app/services/api.service';
+import { User } from 'src/app/models/interfaces';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-item-detail',
@@ -20,13 +24,26 @@ export class ItemDetailComponent implements OnInit, OnChanges {
   rating: number = 0;
   filledStars: number[] = [];
   emptyStars: number[] = [];
+  user: User = {} as User;
 
   onCloseButtonClick() {
     this.closeButtonClick.emit();
   }
 
+  isAuthenticated$ = this.authService.isAuthenticated;
+
+  constructor(
+    private authService: AuthService,
+    private apiService: ApiService,
+    private snackBar: MatSnackBar
+  ) {}
+
   ngOnInit() {
-    console.log('Selected Item:', this.selectedItem);
+    this.authService.user.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -42,5 +59,20 @@ export class ItemDetailComponent implements OnInit, OnChanges {
     this.emptyStars = Array(5 - roundedRating).fill(0);
   }
 
-  constructor() {}
+  addToCart() {
+    this.apiService.addToCart(this.user, this.selectedItem._id).subscribe(
+      (res) => {
+        if (res.success) {
+          this.snackBar.open('Added to cart!', 'Close', {
+            duration: 3000,
+          });
+        } else {
+          this.snackBar.open('Failed to add to cart', 'Close', {
+            duration: 3000,
+          });
+        }
+      },
+      (err) => console.error('Error: ', err)
+    );
+  }
 }

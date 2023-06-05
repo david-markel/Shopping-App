@@ -4,6 +4,7 @@ export interface ItemData {
   description: string;
   price: number;
   rating: number;
+  id: string;
 }
 
 export interface RegisterResponse {
