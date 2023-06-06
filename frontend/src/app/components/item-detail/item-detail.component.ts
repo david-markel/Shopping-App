@@ -60,7 +60,8 @@ export class ItemDetailComponent implements OnInit, OnChanges {
   }
 
   addToCart() {
-    this.apiService.addToCart(this.user, this.selectedItem._id).subscribe(
+    const { _id, collectionName } = this.selectedItem;
+    this.apiService.addToCart(this.user, _id, { collectionName }).subscribe(
       (res) => {
         if (res.success) {
           this.snackBar.open('Added to cart!', 'Close', {

@@ -25,7 +25,7 @@ client
 
     const userRoutes = require("./users")(db, ObjectId, bcrypt, jwt, secretKey);
     const itemRoutes = require("./items")(db);
-    const cartRoutes = require("./carts")(db);
+    const cartRoutes = require("./carts")(db, ObjectId);
 
     app.use(userRoutes);
     app.use(itemRoutes);

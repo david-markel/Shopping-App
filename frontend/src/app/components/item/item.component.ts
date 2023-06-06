@@ -20,5 +20,6 @@ export class ItemComponent {
     price: 0,
     rating: 0,
     id: '',
+    collection: '',
   };
 }

@@ -1,12 +1,12 @@
 const express = require("express");
 
-module.exports = function (db) {
+module.exports = function (db, ObjectId) {
   const router = express.Router();
   let carts = db.collection("carts");
 
   router.post("/addToCart", async (req, res) => {
     try {
-      const { userId, itemId } = req.body;
+      const { userId, itemId, collectionName } = req.body;
 
       // Make sure the cart exists for the user
       let userCart = await carts.findOne({ userId });
@@ -16,10 +16,10 @@ module.exports = function (db) {
         userCart = await carts.findOne({ userId });
       }
 
-      // Add item to cart
+      // Add item to cart with collection name
       const result = await carts.updateOne(
         { userId },
-        { $push: { items: itemId } }
+        { $push: { items: { itemId, collectionName } } }
       );
 
       if (result.modifiedCount > 0) {
@@ -47,30 +47,16 @@ module.exports = function (db) {
         // Now fetch items' details
         let itemsDetails = [];
 
-        for (let itemId of userCart.items) {
-          let item = null;
+        for (let itemInfo of userCart.items) {
+          const { itemId, collectionName } = itemInfo;
 
-          // Loop through each collection until item is found
-          const collections = [
-            "furniture",
-            "clothing",
-            "household",
-            "movies",
-            "games",
-            "toys",
-            "groceries",
-          ];
-
-          for (let collectionName of collections) {
-            const collection = db.collection(collectionName);
-            item = await collection.findOne({ id: itemId });
-
-            // If item is found, break the loop
-            if (item) break;
-          }
+          const collection = db.collection(collectionName);
+          const item = await collection.findOne({ _id: new ObjectId(itemId) });
 
           if (item) {
             itemsDetails.push(item);
+          } else {
+            console.log(`Item not found for itemId: ${itemId}`);
           }
         }
 

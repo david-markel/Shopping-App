@@ -27,15 +27,16 @@ export class ApiService {
     return this.http.get(`${this.BASE_URL}/search/${query}`);
   }
 
-  addToCart(userId: User, itemId: string): Observable<any> {
+  addToCart(userId: User, itemId: string, item: any): Observable<any> {
+    const collectionName = item.collectionName; // Extract the collection name from the item
     return this.http.post(`${this.BASE_URL}/addToCart`, {
       userId: userId.id,
       itemId,
+      collectionName,
     });
   }
 
   getCart(userId: User): Observable<any> {
-    console.log('id: ', userId);
     return this.http.get(`${this.BASE_URL}/getCart/${userId.id}`);
   }
 }

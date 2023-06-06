@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service'; // Import the new ApiService
 import { ActivatedRoute } from '@angular/router';
+
+import { ApiService } from 'src/app/services/api.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-category-list',
@@ -16,7 +18,11 @@ export class CategoryListComponent implements OnInit {
     this.itemClicked.emit(item);
   }
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+    private utilsService: UtilsService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -47,12 +53,7 @@ export class CategoryListComponent implements OnInit {
     if (this.category === 'all') {
       this.apiService.getAllItems().subscribe(
         (items: any) => {
-          this.items = items.map((item: any) => {
-            return {
-              ...item,
-              imageSrc: '../../../assets/items/' + item.imageSrc,
-            };
-          });
+          this.items = this.utilsService.processItems(items);
           console.log('Data:', this.items);
         },
         (error) => {
@@ -62,12 +63,7 @@ export class CategoryListComponent implements OnInit {
     } else {
       this.apiService.getItemsCategory(this.category).subscribe(
         (items: any) => {
-          this.items = items.map((item: any) => {
-            return {
-              ...item,
-              imageSrc: '../../../assets/items/' + item.imageSrc,
-            };
-          });
+          this.items = this.utilsService.processItems(items);
           console.log('Data:', this.items);
         },
         (error) => {

@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ApiService } from 'src/app/services/api.service';
+import { UtilsService } from 'src/app/services/utils.service';
 import { ItemData } from 'src/app/models/interfaces';
 
 const fadeIn = trigger('fadeIn', [
@@ -27,19 +28,17 @@ export class ItemsYouWillLikeComponent implements OnInit {
   pages: number[] = [];
   currentPage = 0;
 
-  constructor(private apiService: ApiService) {
+  constructor(
+    private apiService: ApiService,
+    private utilsService: UtilsService
+  ) {
     this.pages = Array(Math.ceil(this.itemData.length / 3)).fill(0);
   }
 
   ngOnInit() {
     this.apiService.getJustForYouItems().subscribe(
       (items: any) => {
-        this.itemData = items.map((item: any) => {
-          return {
-            ...item,
-            imageSrc: '../../../assets/items/' + item.imageSrc,
-          };
-        });
+        this.itemData = this.utilsService.processItems(items);
         this.pages = Array(Math.ceil(this.itemData.length / 3)).fill(0);
       },
       (error) => {
