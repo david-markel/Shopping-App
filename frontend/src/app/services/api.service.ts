@@ -39,4 +39,10 @@ export class ApiService {
   getCart(userId: User): Observable<any> {
     return this.http.get(`${this.BASE_URL}/getCart/${userId.id}`);
   }
+
+  removeFromCart(userId: User, itemId: string): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/removeFromCart`, {
+      body: { userId: userId.id, itemId },
+    });
+  }
 }

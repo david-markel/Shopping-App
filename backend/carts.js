@@ -74,5 +74,29 @@ module.exports = function (db, ObjectId) {
     }
   });
 
+  router.delete("/removeFromCart", async (req, res) => {
+    try {
+      const { userId, itemId } = req.body;
+
+      // Remove item from the user's cart
+      const result = await carts.updateOne(
+        { userId },
+        { $pull: { items: { itemId } } }
+      );
+
+      if (result.modifiedCount > 0) {
+        res.send({
+          success: true,
+          message: "Item removed from cart successfully",
+        });
+      } else {
+        throw new Error("Failed to remove item from cart");
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Error removing item from cart");
+    }
+  });
+
   return router;
 };

@@ -4,11 +4,12 @@
     <h2 class="cart-header">Items in Cart</h2>
     <div class="items-container">
       <ng-container *ngIf="cart.length; else emptyCart">
-        <app-item
-          class="app-item"
-          *ngFor="let item of cart"
-          [props]="item"
-        ></app-item>
+        <div *ngFor="let item of cart">
+          <app-item class="app-item" [props]="item"></app-item>
+          <button class="remove-btn" (click)="removeItemFromCart(item)">
+            <mat-icon aria-label="Remove item">close</mat-icon>
+          </button>
+        </div>
       </ng-container>
       <ng-template #emptyCart>
         <div class="empty-cart-message">Your cart is empty.</div>

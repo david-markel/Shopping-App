@@ -4,8 +4,8 @@ export interface ItemData {
   description: string;
   price: number;
   rating: number;
-  id: string;
-  collection: string;
+  _id: string;
+  collectionName: string;
 }
 
 export interface RegisterResponse {

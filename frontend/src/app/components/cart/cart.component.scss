@@ -20,17 +20,16 @@
 }
 
 .cart-header {
-  margin-bottom: 1rem; /* adjust as necessary */
-  font-size: 2rem; /* adjust as necessary */
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
-
 
 .items-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* this will create three columns of equal width */
-  gap: 1rem; /* you can adjust this as per your needs */
-  justify-items: center; /* this will center the items horizontally in their respective grid cells */
-  align-items: start; /* this will align the items to the top of their respective grid cells */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
 }
 
 .billing-form {
@@ -46,10 +45,25 @@
 }
 
 .app-item {
-  max-width: 100%; // Make sure the width does not exceed the grid cell
-  height: auto; // Let the height be determined by the content
+  max-width: 100%;
+  height: auto;
 }
 
 .items-container > app-item {
   cursor: default;
+}
+
+.items-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
 }
