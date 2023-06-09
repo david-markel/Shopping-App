@@ -34,3 +34,13 @@ export interface User {
     zipcode: string;
   };
 }
+
+export interface Order {
+  _id: string;
+  userId: string;
+  items: ItemData;
+  totalCost: number;
+  address: string;
+  status: 'processing' | 'shipping' | 'delivered' | 'cancelled';
+  datePlaced: Date;
+}

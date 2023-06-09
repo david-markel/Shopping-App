@@ -26,10 +26,12 @@ client
     const userRoutes = require("./users")(db, ObjectId, bcrypt, jwt, secretKey);
     const itemRoutes = require("./items")(db);
     const cartRoutes = require("./carts")(db, ObjectId);
+    const orderRoutes = require("./orders")(db, ObjectId);
 
     app.use(userRoutes);
     app.use(itemRoutes);
     app.use(cartRoutes);
+    app.use(orderRoutes);
 
     app.listen(port, () => {
       console.log(`Server listening at http://localhost:${port}`);

@@ -3,17 +3,17 @@
   <div class="order-card" *ngFor="let order of orders">
     <div class="order-header">
       <div>
-        <h2>Order ID: {{ order.id }}</h2>
+        <h2>Order ID: {{ order._id }}</h2>
         <h3>Status: {{ order.status }}</h3>
-        <p>Customer: {{ order.customer }}</p>
-        <p>Order Date: {{ order.date }}</p>
-        <p>Total: ${{ order.total }}</p>
+        <p>Customer: {{ order.customerName }}</p>
+        <p>Order Date: {{ order.created_at }}</p>
+        <p>Total: ${{ order.totalCost }}</p>
       </div>
       <div class="status-icon">
         <mat-icon *ngIf="order.status == 'Delivered'" style="color: green"
           >done</mat-icon
         >
-        <mat-icon *ngIf="order.status == 'Processing'" style="color: orange"
+        <mat-icon *ngIf="order.status == 'processing'" style="color: orange"
           >autorenew</mat-icon
         >
         <mat-icon *ngIf="order.status == 'Shipped'" style="color: blue"

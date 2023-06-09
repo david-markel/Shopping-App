@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemData, User } from '../../models/interfaces';
+import { ItemData, Order, User } from '../../models/interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -45,7 +45,6 @@ export class CartComponent implements OnInit {
   }
 
   removeItemFromCart(item: ItemData): void {
-    console.log('item: ', item);
     this.apiService.removeFromCart(this.user, item._id).subscribe(
       (res) => {
         if (res.success) {
@@ -68,5 +67,22 @@ export class CartComponent implements OnInit {
         });
       }
     );
+  }
+
+  createOrder(billingInfo: any): void {
+    const totalCost = this.cart.reduce((total, item) => total + item.price, 0);
+    const address = billingInfo.address1 + ' ' + billingInfo.address2;
+    const customerName = billingInfo.firstName + ' ' + billingInfo.lastName;
+    this.apiService
+      .createOrder(this.user.id, this.cart, totalCost, address, customerName)
+      .subscribe(
+        (res: Order) => {
+          console.log('Order created successfully');
+          this.cart = [];
+        },
+        (err) => {
+          console.error('Error creating order:', err);
+        }
+      );
   }
 }
