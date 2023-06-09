@@ -1,5 +1,5 @@
 <form [formGroup]="billingForm" (ngSubmit)="onSubmit()" class="billing-form">
-  <h1>Billing Information</h1>
+  <h1>Address</h1>
 
   <div class="input-group-row">
     <div class="input-group">
@@ -49,10 +49,11 @@
   </div>
 
   <div class="input-group">
-    <label for="zipCode">Zip Code</label>
-    <input formControlName="zipCode" type="text" id="zipCode" />
+    <label for="zipcode">Zip Code</label>
+    <input formControlName="zipcode" type="text" id="zipCode" />
   </div>
 
+  <h1>Billing</h1>
   <div class="input-group">
     <label for="cardNumber">Card Number</label>
     <input formControlName="cardNumber" type="text" id="cardNumber" />

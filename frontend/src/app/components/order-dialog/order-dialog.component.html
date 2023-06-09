@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Order Details</h2>
+<div mat-dialog-content>
+  <div *ngFor="let item of data.items">
+    <p>Item Name: {{ item.title }}</p>
+    <p>Item Price: {{ item.price }}</p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button
+    mat-button
+    color="warn"
+    (click)="cancelOrder()"
+    *ngIf="data.status === 'processing' || data.status === 'shipped'"
+  >
+    Cancel Order
+  </button>
+</div>

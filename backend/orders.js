@@ -73,7 +73,6 @@ module.exports = (db, ObjectId) => {
     res.json({ success: true, orders });
   });
 
-  // Update the status of an order
   router.put("/updateOrderStatus/:orderId", async (req, res) => {
     const { status } = req.body;
     const { orderId } = req.params;

@@ -1,8 +1,11 @@
-// orders.component.ts
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
+
 import { User } from 'src/app/models/interfaces';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { OrderDialogComponent } from '../order-dialog/order-dialog.component';
 
 @Component({
   selector: 'app-orders',
@@ -15,7 +18,9 @@ export class OrdersComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private authService: AuthService
+    private authService: AuthService,
+    public dialog: MatDialog,
+    public datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -41,5 +46,16 @@ export class OrdersComponent implements OnInit {
       },
       (err) => console.error('Error: ', err)
     );
+  }
+
+  viewOrder(order: any): void {
+    const dialogRef = this.dialog.open(OrderDialogComponent, {
+      width: '600px',
+      data: order,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 }

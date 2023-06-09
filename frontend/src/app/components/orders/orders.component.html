@@ -6,24 +6,27 @@
         <h2>Order ID: {{ order._id }}</h2>
         <h3>Status: {{ order.status }}</h3>
         <p>Customer: {{ order.customerName }}</p>
-        <p>Order Date: {{ order.created_at }}</p>
+        <p>
+          Order Date: {{ datePipe.transform(order.created_at, "shortDate") }}
+        </p>
+
         <p>Total: ${{ order.totalCost }}</p>
       </div>
       <div class="status-icon">
-        <mat-icon *ngIf="order.status == 'Delivered'" style="color: green"
+        <mat-icon *ngIf="order.status == 'delivered'" style="color: green"
           >done</mat-icon
         >
         <mat-icon *ngIf="order.status == 'processing'" style="color: orange"
           >autorenew</mat-icon
         >
-        <mat-icon *ngIf="order.status == 'Shipped'" style="color: blue"
+        <mat-icon *ngIf="order.status == 'shipping'" style="color: blue"
           >local_shipping</mat-icon
         >
-        <mat-icon *ngIf="order.status == 'Cancelled'" style="color: red"
+        <mat-icon *ngIf="order.status == 'cancelled'" style="color: red"
           >cancel</mat-icon
         >
       </div>
     </div>
-    <button>View Order</button>
+    <button (click)="viewOrder(order)">View Order</button>
   </div>
 </div>

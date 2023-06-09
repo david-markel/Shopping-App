@@ -12,6 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +35,7 @@ import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PasswordDialogComponent } from './components/password-dialog/password-dialog.component';
+import { OrderDialogComponent } from './components/order-dialog/order-dialog.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { PasswordDialogComponent } from './components/password-dialog/password-d
     LoginComponent,
     RegisterComponent,
     PasswordDialogComponent,
+    OrderDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import { PasswordDialogComponent } from './components/password-dialog/password-d
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  entryComponents: [OrderDialogComponent],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

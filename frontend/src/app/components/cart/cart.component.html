@@ -1,6 +1,7 @@
 <div class="cart-container">
   <app-billing-form
     class="billing-form"
+    [user]="user"
     (formSubmitted)="createOrder($event)"
   ></app-billing-form>
 
