@@ -1,4 +1,4 @@
-<div class="item-container">
+<div class="item-container" *ngIf="!isLoading; else loading">
   <app-item
     *ngFor="let item of items"
     [props]="item"
@@ -9,3 +9,12 @@
     No items found for your search.
   </p>
 </div>
+
+<ng-template #loading>
+  <div class="item-container">
+    <app-skeleton-item></app-skeleton-item>
+    <app-skeleton-item></app-skeleton-item>
+    <app-skeleton-item></app-skeleton-item>
+    <app-skeleton-item></app-skeleton-item>
+  </div>
+</ng-template>

@@ -1,15 +1,29 @@
 <div class="main">
   <h1 class="justForYou">Just For You</h1>
-  <div class="images">
-    <ng-container
-      *ngFor="
-        let item of itemData | slice : currentPage * 3 : currentPage * 3 + 3;
-        let i = index
-      "
-    >
-      <app-item [props]="item" (click)="onItemClick(item)" [@fadeIn]></app-item>
-    </ng-container>
-  </div>
+  <ng-container *ngIf="!isLoading; else loading">
+    <div class="images">
+      <ng-container
+        *ngFor="
+          let item of itemData | slice : currentPage * 3 : currentPage * 3 + 3;
+          let i = index
+        "
+      >
+        <app-item
+          [props]="item"
+          (click)="onItemClick(item)"
+          [@fadeIn]
+        ></app-item>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <div class="images">
+      <app-skeleton-item></app-skeleton-item>
+      <app-skeleton-item></app-skeleton-item>
+      <app-skeleton-item></app-skeleton-item>
+    </div>
+  </ng-template>
+
   <div class="icon-container">
     <mat-icon class="icons" (click)="onLeftArrowClick()"
       >keyboard_arrow_left</mat-icon

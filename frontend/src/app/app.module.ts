@@ -36,6 +36,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PasswordDialogComponent } from './components/password-dialog/password-dialog.component';
 import { OrderDialogComponent } from './components/order-dialog/order-dialog.component';
+import { SkeletonItemComponent } from './components/skeleton-item/skeleton-item.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { OrderDialogComponent } from './components/order-dialog/order-dialog.com
     RegisterComponent,
     PasswordDialogComponent,
     OrderDialogComponent,
+    SkeletonItemComponent,
   ],
   imports: [
     BrowserModule,

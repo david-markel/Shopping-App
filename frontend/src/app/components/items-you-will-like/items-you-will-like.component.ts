@@ -19,6 +19,7 @@ const fadeIn = trigger('fadeIn', [
 })
 export class ItemsYouWillLikeComponent implements OnInit {
   @Output() itemClicked = new EventEmitter<any>();
+  isLoading = true;
 
   onItemClick(item: any) {
     this.itemClicked.emit(item);
@@ -32,14 +33,14 @@ export class ItemsYouWillLikeComponent implements OnInit {
     private apiService: ApiService,
     private utilsService: UtilsService
   ) {
-    this.pages = Array(Math.ceil(this.itemData.length / 3)).fill(0);
+    this.pages = Array(3).fill(0);
   }
 
   ngOnInit() {
     this.apiService.getJustForYouItems().subscribe(
       (items: any) => {
         this.itemData = this.utilsService.processItems(items);
-        this.pages = Array(Math.ceil(this.itemData.length / 3)).fill(0);
+        this.isLoading = false;
       },
       (error) => {
         console.error('Error:', error);

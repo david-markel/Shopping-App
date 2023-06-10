@@ -12,6 +12,8 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class CategoryListComponent implements OnInit {
   items: any[] = [];
   category: string = 'movies';
+  isLoading = true;
+
   @Output() itemClicked = new EventEmitter<any>();
 
   onItemClick(item: any) {
@@ -30,16 +32,11 @@ export class CategoryListComponent implements OnInit {
         const searchQuery = params['query'];
         this.apiService.searchItems(searchQuery).subscribe(
           (items: any) => {
-            this.items = items.map((item: any) => {
-              return {
-                ...item,
-                imageSrc: '../../../assets/items/' + item.imageSrc,
-              };
-            });
-            console.log('Data:', this.items);
+            this.items = this.utilsService.processItems(items);
+            this.isLoading = false;
           },
           (error) => {
-            // console.error('Error:', error);
+            console.error('Error:', error);
           }
         );
       } else if (params['category']) {
@@ -54,6 +51,7 @@ export class CategoryListComponent implements OnInit {
       this.apiService.getAllItems().subscribe(
         (items: any) => {
           this.items = this.utilsService.processItems(items);
+          this.isLoading = false;
           console.log('Data:', this.items);
         },
         (error) => {
@@ -64,6 +62,7 @@ export class CategoryListComponent implements OnInit {
       this.apiService.getItemsCategory(this.category).subscribe(
         (items: any) => {
           this.items = this.utilsService.processItems(items);
+          this.isLoading = false;
           console.log('Data:', this.items);
         },
         (error) => {

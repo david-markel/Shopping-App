@@ -35,10 +35,9 @@ export class OrdersComponent implements OnInit {
   getOrders(): void {
     this.apiService.getOrders(this.user.id).subscribe(
       (res) => {
-        console.log('Res: ', res);
         if (res.success) {
           console.log('Retrieved orders successfully ', res);
-          this.orders = res.orders;
+          this.orders = [...res.orders].reverse();
           console.log('orders: ', this.orders);
         } else {
           console.error('Failed to retrieve orders');
