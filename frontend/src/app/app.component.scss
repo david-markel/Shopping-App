@@ -1,13 +1,24 @@
-app-footer {
-  width: 100%;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
-.app-content {
+.wrapper {
+  min-height: 100%;
   display: flex;
+  flex-direction: column;
 }
+
 .main-content {
+  flex: 1;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.app-footer {
+  flex-shrink: 0;
+  width: 100%;
 }
 
 @mixin background-image($image-url) {

@@ -1,5 +1,8 @@
 <div class="container">
   <h1>Your Orders</h1>
+  <div *ngIf="orders.length === 0" class="no-orders-message">
+    You have no orders yet.
+  </div>
   <div class="order-card" *ngFor="let order of orders">
     <div class="order-header">
       <div>
