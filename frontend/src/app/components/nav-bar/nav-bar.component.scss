@@ -11,12 +11,10 @@
 .bottomHalf {
   background: var(--secondary-grey);
   display: flex;
-  justify-content: space-around; /* Changed to space-around for better distribution of elements */
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Added to allow items to wrap onto the next line if necessary */
-  height: auto; /* Changed to auto to allow for increased height when items wrap */
+  height: 50px;
   color: var(--primary-brown);
-  padding: 10px 0; /* Added padding to create space when items wrap onto the next line */
 }
 
 .logo {
@@ -35,23 +33,9 @@
   font-size: 1.3em;
   color: inherit;
   white-space: nowrap;
-  flex-basis: calc(
-    100% / 8
-  ); /* Each .categories item will take up 1/8th of the width */
-  text-align: center; /* To center the text within the flex item */
-  box-sizing: border-box; /* To include padding and border in element's total width and height */
-  padding: 0 10px; /* Add some horizontal padding to create some space around the text */
 }
 
 .mat-icon {
   vertical-align: middle;
   margin-left: 5px;
-}
-
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-  .categories {
-    flex-basis: 50%; /* Each .categories item will take up 1/2 of the width */
-    font-size: 1em; /* Decrease font size to fit smaller screens */
-  }
 }
