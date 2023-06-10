@@ -6,20 +6,24 @@
   border-radius: 4px;
   overflow: hidden;
   height: 100%;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-
 .image-container {
-  flex: 1;
-  overflow: hidden; // Hide any part of the image that overflows
-  height: 200px; // Set a fixed height for the image container
+  flex: 0.6;
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  overflow: hidden;
 }
 
 .itemImages {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; // Make the image cover the container while maintaining its aspect ratio
+  object-fit: cover;
 }
 
 .content-container {
@@ -28,12 +32,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  height: 3rem; // Set a fixed height for the content container
+  flex: 0.4;
 }
 
 h2,
 p {
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 h2 {
@@ -45,4 +52,25 @@ h2 {
 
 p {
   font-size: 0.875rem;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  /* adjust this value based on your requirements */
+  :host {
+    flex-direction: column;
+  }
+
+  .image-container {
+    flex: 1;
+  }
+
+  .content-container {
+    display: none;
+  }
+
+  .itemImages {
+    height: 100%; // Cover the entire item with the image
+    object-fit: cover; // Ensure that the image covers the entire item
+  }
 }
