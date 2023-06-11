@@ -17,6 +17,12 @@
   color: var(--primary-brown);
 }
 
+.topHalf,
+.bottomHalf {
+  /*...other styles...*/
+  min-width: 800px; /* adjust as necessary */
+}
+
 .logo {
   height: 5em;
 }

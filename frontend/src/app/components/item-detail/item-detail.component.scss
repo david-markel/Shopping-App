@@ -9,6 +9,20 @@
 
   @media (max-width: 600px) {
     padding: 0.5rem; // Adjust the padding for smaller screens
+    font-size: 0.8rem;
+    mat-icon {
+      font-size: 1.2rem; /* Adjust the icon size as needed */
+      vertical-align: middle;
+    }
+    .rating-container {
+      mat-icon {
+        margin-right: 1px; /* Adjust as necessary */
+      }
+    }
+    .close-button {
+      padding: 4px; /* Adjust as necessary */
+      border-radius: 25%; /* Adjust as necessary */
+    }
   }
 
   @media (max-width: 768px) {
