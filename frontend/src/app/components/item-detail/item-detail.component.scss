@@ -50,8 +50,19 @@
     position: absolute;
     top: 8px;
     right: 8px;
+    background: var(
+      --primary-grey
+    ); /* Set the background color to match the component */
+    border-radius: 50%; /* Makes the button circular */
+    padding: 8px; /* Creates some space around the icon */
+    display: flex; /* Ensures the icon is centered within the button */
+    align-items: center;
+    justify-content: center;
   }
 
+  .close-button:hover {
+    background: var(--secondary-grey); /* Background color on hover */
+  }
   .add-to-cart {
     width: 100%;
     background-color: var(--primary-accent);
