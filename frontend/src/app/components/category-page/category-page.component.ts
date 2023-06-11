@@ -24,7 +24,7 @@ export class CategoryPageComponent {
   }
 
   navbarHeight = 146;
-  footerHeight = 150;
+  footerHeight = 200;
   topOffset = this.navbarHeight;
 
   @HostListener('window:scroll', [])
@@ -39,7 +39,7 @@ export class CategoryPageComponent {
     if (scrollY >= this.navbarHeight) {
       this.topOffset = 0;
     } else {
-      this.topOffset = this.navbarHeight;
+      this.topOffset = this.navbarHeight - scrollY;
     }
 
     if (scrollY + viewportHeight >= documentHeight - this.footerHeight) {
