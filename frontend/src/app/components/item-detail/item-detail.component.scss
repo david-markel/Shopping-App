@@ -7,7 +7,7 @@
   padding: 1rem;
   min-height: calc(100vh - 40px);
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     padding: 0.5rem;
     font-size: 0.7rem;
     mat-icon {

@@ -5,6 +5,13 @@
   padding: 4rem; // Add padding to create space between the component and the viewport
 }
 
+::ng-deep .selected-item .item-container {
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); // Change to a 3-column grid when an item is selected
+}
+
 app-item {
   margin-bottom: 1rem;
 }

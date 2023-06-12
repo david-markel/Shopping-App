@@ -13,9 +13,6 @@
 }
 
 .with-selected-item .content {
-  transform: translateX(
-    -0%
-  ); // Adjust this value to control how much the content is pushed to the left
   max-width: 70%; // Adjust this value to control the maximum width of the content when an item is selected
 }
 
@@ -30,13 +27,23 @@ app-item-detail {
 }
 
 .with-selected-item app-item-detail {
-  transform: translateX(
-    235%
-  ); // Adjust this value to control how much the item detail is moved to the right
+  transform: translateX(235%);
 }
 
 .visible {
   opacity: 1 !important;
   visibility: visible !important;
-  pointer-events: auto; // Restore interaction with the visible item-detail component
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .with-selected-item .category-list {
+    transform: translateX(-20%);
+  }
+}
+
+.itemsYouWillLikePlaceholder {
+  /* Make sure to set these dimensions to match the size of your 'app-items-you-will-like' element */
+  height: 200px; /* Example height, adjust as necessary */
+  width: 100%;
 }

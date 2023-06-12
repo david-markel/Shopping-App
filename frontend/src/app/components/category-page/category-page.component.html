@@ -8,8 +8,12 @@
     ></app-items-you-will-like>
 
     <app-category-list
+      class="category-list"
+      [ngClass]="{ 'selected-item': selectedItem }"
       (itemClicked)="onItemSelected($event)"
     ></app-category-list>
+
+    <div *ngIf="isSearchRoute" class="itemsYouWillLikePlaceholder"></div>
   </div>
   <app-item-detail
     [selectedItem]="selectedItem"
