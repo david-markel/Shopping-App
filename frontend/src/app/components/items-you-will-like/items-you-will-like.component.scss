@@ -49,13 +49,14 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--secondary-grey);
+  background-color: var(--primary-brown);
   margin: 0 5px;
   cursor: pointer;
 }
 
 .pagination-indicator div.active {
-  background-color: var(--primary-grey);
+  width: 15px;
+  height: 15px;
 }
 
 @keyframes fadeIn {
