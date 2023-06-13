@@ -19,6 +19,16 @@
   gap: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .billing-form {
+    min-width: 100%;
+  }
+}
+
 .cart-header {
   margin-bottom: 1rem;
   font-size: 2rem;

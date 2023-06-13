@@ -105,7 +105,7 @@ select {
 }
 
 button {
-  width: 30%; /* Adjust as per your liking */
+  width: 30%;
   padding: 10px;
   color: #fff;
   border: none;
@@ -137,4 +137,41 @@ button {
 
 .delete-button:hover {
   background-color: #c0392b;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    min-width: 350px;
+    min-height: 500px;
+  }
+
+  .update-form {
+    min-width: 350px;
+    min-height: 500px;
+  }
+
+  input {
+    min-width: 80px;
+    min-height: 30px;
+    font-size: 14px;
+  }
+
+  h1,
+  h2 {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  .account-content {
+    flex-direction: column;
+  }
+
+  .right-content,
+  .left-content {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
