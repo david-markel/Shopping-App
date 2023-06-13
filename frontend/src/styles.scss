@@ -145,8 +145,10 @@ body {
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
-  border-color: var(--primary-brown);
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: $primary-brown;
+  outline-color: $primary-brown;
+  box-shadow: 0 0 3px $primary-brown;
 }

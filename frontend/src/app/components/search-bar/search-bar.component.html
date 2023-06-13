@@ -1,11 +1,8 @@
-<mat-form-field
-  class="example-form-field"
-  style="margin-bottom: -1.25em; width: 40vw; margin-right: 30px"
-  appearance="fill"
->
+<mat-form-field class="example-form-field" appearance="fill">
   <input
     matInput
     type="text"
+    class="search-input"
     placeholder="Search Markelo"
     [(ngModel)]="searchQuery"
     (keydown.enter)="performSearch()"

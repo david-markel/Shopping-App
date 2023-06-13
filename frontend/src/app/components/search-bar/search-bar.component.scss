@@ -1,0 +1,11 @@
+.example-form-field {
+  margin-bottom: -1.25em;
+  width: 40vw;
+  margin-right: 30px;
+}
+
+.example-form-field .search-input:focus {
+  outline: none;
+  border-color: initial;
+  box-shadow: none;
+}
