@@ -4,10 +4,9 @@
     [user]="user"
     (formSubmitted)="createOrder($event)"
   ></app-billing-form>
-
   <div class="items-section">
     <h2 class="cart-header">Items in Cart</h2>
-    <div class="items-container">
+    <div class="items-container" *ngIf="!isLoading; else loading">
       <ng-container *ngIf="cart.length; else emptyCart">
         <div *ngFor="let item of cart">
           <app-item class="app-item" [props]="item"></app-item>
@@ -20,5 +19,11 @@
         <div class="empty-cart-message">Your cart is empty.</div>
       </ng-template>
     </div>
+    <ng-template #loading>
+      <div class="items-container">
+        <app-skeleton-item></app-skeleton-item>
+        <app-skeleton-item></app-skeleton-item>
+      </div>
+    </ng-template>
   </div>
 </div>

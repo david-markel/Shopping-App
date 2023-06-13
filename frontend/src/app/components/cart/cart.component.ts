@@ -13,6 +13,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class CartComponent implements OnInit {
   cart: ItemData[] = [];
   user: User = {} as User;
+  isLoading = true;
   constructor(
     private apiService: ApiService,
     private authService: AuthService,
@@ -33,9 +34,8 @@ export class CartComponent implements OnInit {
     this.apiService.getCart(this.user).subscribe(
       (res) => {
         if (res.success) {
-          console.log('Retrieved cart successfully');
           this.cart = this.utilsService.processItems(res.cart.items);
-          console.log('Cart: ', this.cart);
+          this.isLoading = false;
         } else {
           console.error('Failed to retrieve cart');
         }

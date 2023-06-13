@@ -15,6 +15,7 @@ import { OrderDialogComponent } from '../order-dialog/order-dialog.component';
 export class OrdersComponent implements OnInit {
   orders: any[] = [];
   user: User = {} as User;
+  isLoading = true;
 
   constructor(
     private apiService: ApiService,
@@ -36,9 +37,8 @@ export class OrdersComponent implements OnInit {
     this.apiService.getOrders(this.user.id).subscribe(
       (res) => {
         if (res.success) {
-          console.log('Retrieved orders successfully ', res);
           this.orders = [...res.orders].reverse();
-          console.log('orders: ', this.orders);
+          this.isLoading = false;
         } else {
           console.error('Failed to retrieve orders');
         }
