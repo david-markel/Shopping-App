@@ -25,31 +25,31 @@ export class LoginComponent {
       (response) => {
         if (response.auth === true) {
           // successful login
-          this.snackBar.open('Succesfully logged in!', 'Close', {
+          this.snackBar.open('Successfully logged in!', 'Close', {
             duration: 3000,
           });
           // navigate to home page
           this.router.navigate(['/']);
-        } else {
-          // handle error
+        }
+      },
+      (error) => {
+        if (error.status === 401) {
           this.snackBar.open(
-            'Login failed. Please check your credentials and try again.',
+            'Invalid credentials. Please check your email and password.',
             'Close',
             {
               duration: 3000,
             }
           );
-          console.error(response);
+        } else {
+          this.snackBar.open(
+            'An error occurred. Please try again later.',
+            'Close',
+            {
+              duration: 3000,
+            }
+          );
         }
-      },
-      (error) => {
-        this.snackBar.open(
-          'An error occurred. Please try again later.',
-          'Close',
-          {
-            duration: 3000,
-          }
-        );
         console.error(error);
       }
     );
