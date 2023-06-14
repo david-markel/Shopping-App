@@ -9,7 +9,10 @@ module.exports = (db, ObjectId) => {
     // Generate a new order
     const newOrder = {
       userId: new ObjectId(userId),
-      items,
+      items: items.map((item) => ({
+        itemId: item._id,
+        quantity: item.quantity,
+      })), // map to only get itemId and quantity
       totalCost,
       address,
       status: "processing",
@@ -61,7 +64,6 @@ module.exports = (db, ObjectId) => {
     }
   });
 
-  // Get all orders for a specific user
   router.get("/getOrders/:userId", async (req, res) => {
     const { userId } = req.params;
 
@@ -69,6 +71,40 @@ module.exports = (db, ObjectId) => {
       .collection("orders")
       .find({ userId: new ObjectId(userId) })
       .toArray();
+
+    const categories = [
+      "groceries",
+      "clothing",
+      "household",
+      "toys",
+      "games",
+      "movies",
+      "furniture",
+    ];
+
+    // Transform 'itemId's back to item details
+    for (let order of orders) {
+      for (let item of order.items) {
+        let itemDetails = null;
+        for (let category of categories) {
+          itemDetails = await db
+            .collection(category)
+            .findOne({ _id: new ObjectId(item.itemId) });
+          if (itemDetails) {
+            break;
+          }
+        }
+
+        if (itemDetails) {
+          item.title = itemDetails.title;
+          item.price = itemDetails.price;
+        } else {
+          console.error(
+            `Item with id ${item.itemId} not found in any category`
+          );
+        }
+      }
+    }
 
     res.json({ success: true, orders });
   });

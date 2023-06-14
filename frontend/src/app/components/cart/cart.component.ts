@@ -83,8 +83,20 @@ export class CartComponent implements OnInit {
     const totalCost = this.totalCost();
     const address = billingInfo.address1 + ' ' + billingInfo.address2;
     const customerName = billingInfo.firstName + ' ' + billingInfo.lastName;
+
+    const cartWithQuantities = this.cart.map((item, index) => ({
+      ...item,
+      quantity: this.quantities[index],
+    }));
+
     this.apiService
-      .createOrder(this.user.id, this.cart, totalCost, address, customerName)
+      .createOrder(
+        this.user.id,
+        cartWithQuantities,
+        totalCost,
+        address,
+        customerName
+      )
       .subscribe(
         (res: Order) => {
           console.log('Order created successfully');

@@ -38,10 +38,11 @@ export class OrdersComponent implements OnInit {
       (res) => {
         if (res.success) {
           this.orders = [...res.orders].reverse();
-          this.isLoading = false;
+          console.log('Orders ', this.orders);
         } else {
           console.error('Failed to retrieve orders');
         }
+        this.isLoading = false;
       },
       (err) => console.error('Error: ', err)
     );
