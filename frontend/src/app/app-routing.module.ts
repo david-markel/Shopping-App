@@ -12,6 +12,7 @@ import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ConditionsComponent } from './components/conditions/conditions.component';
 const routes: Routes = [
   { path: '', redirectTo: '/category/all', pathMatch: 'full' },
   { path: 'category/:category', component: CategoryPageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'jobs', component: JobsComponent },
   { path: 'community', component: CommunityComponent },
+  { path: 'conditions', component: ConditionsComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'cart', component: CartComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },

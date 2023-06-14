@@ -53,3 +53,7 @@ body {
 .login-register-background {
   @include background-image("../assets/DALLE/negativeSquare.png");
 }
+
+.footer-background {
+  @include background-image("../assets/DALLE/sample3.png");
+}
