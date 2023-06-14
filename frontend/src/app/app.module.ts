@@ -11,7 +11,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -39,6 +39,7 @@ import { OrderDialogComponent } from './components/order-dialog/order-dialog.com
 import { SkeletonItemComponent } from './components/skeleton-item/skeleton-item.component';
 import { SkeletonOrderComponent } from './components/skeleton-order/skeleton-order.component';
 import { ConditionsComponent } from './components/conditions/conditions.component';
+import { ErrorInterceptor } from './error.interceptor';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,10 @@ import { ConditionsComponent } from './components/conditions/conditions.componen
     HttpClientModule,
   ],
   entryComponents: [OrderDialogComponent],
-  providers: [DatePipe],
+  providers: [
+    DatePipe,
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiService } from 'src/app/services/api.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { ItemData } from 'src/app/models/interfaces';
@@ -31,7 +32,8 @@ export class ItemsYouWillLikeComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
+    private snackBar: MatSnackBar
   ) {
     this.pages = Array(3).fill(0);
   }
@@ -43,7 +45,10 @@ export class ItemsYouWillLikeComponent implements OnInit {
         this.isLoading = false;
       },
       (error) => {
-        console.error('Error:', error);
+        this.snackBar.open('Error loading items', 'Close', {
+          duration: 2000,
+        });
+        this.isLoading = false;
       }
     );
   }

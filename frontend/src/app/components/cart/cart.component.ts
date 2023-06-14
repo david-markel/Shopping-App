@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import { ItemData, Order, User } from '../../models/interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiService } from 'src/app/services/api.service';
@@ -11,6 +14,8 @@ import { UtilsService } from 'src/app/services/utils.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  private unsubscribe$ = new Subject<void>();
+
   cart: ItemData[] = [];
   user: User = {} as User;
   quantities: number[] = [];
@@ -24,12 +29,19 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authService.user.subscribe((user) => {
-      if (user) {
-        this.user = user;
-        this.getCart();
-      }
-    });
+    this.authService.user
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((user) => {
+        if (user) {
+          this.user = user;
+          this.getCart();
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   getCart(): void {
@@ -38,33 +50,35 @@ export class CartComponent implements OnInit {
         if (res.success) {
           this.cart = this.utilsService.processItems(res.cart.items);
           this.quantities = Array(this.cart.length).fill(1);
-        } else {
-          console.error('Failed to retrieve cart');
         }
         this.isLoading = false;
       },
-      (err) => console.error('Error: ', err)
+      (err) => {
+        this.snackBar.open('Error loading cart', 'Close', {
+          duration: 2000,
+        });
+        this.isLoading = false;
+      }
     );
   }
 
   removeItemFromCart(item: ItemData): void {
     this.apiService.removeFromCart(this.user, item._id).subscribe(
       (res) => {
+        // ...
+
         if (res.success) {
-          console.log('Item removed successfully');
           this.snackBar.open('Item removed successfully', 'Close', {
             duration: 2000,
           });
           this.getCart();
         } else {
-          console.error('Failed to remove item from cart');
-          this.snackBar.open('Error removing item from cart', 'Close', {
+          this.snackBar.open('Failed to remove item from cart', 'Close', {
             duration: 2000,
           });
         }
       },
       (err) => {
-        console.error('Error: ', err);
         this.snackBar.open('Error removing item from cart', 'Close', {
           duration: 2000,
         });
@@ -99,11 +113,15 @@ export class CartComponent implements OnInit {
       )
       .subscribe(
         (res: Order) => {
-          console.log('Order created successfully');
+          this.snackBar.open('Order created successfully', 'Close', {
+            duration: 2000,
+          });
           this.cart = [];
         },
         (err) => {
-          console.error('Error creating order:', err);
+          this.snackBar.open('Error creating order', 'Close', {
+            duration: 2000,
+          });
         }
       );
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DatePipe } from '@angular/common';
 
 import { User } from 'src/app/models/interfaces';
@@ -21,7 +22,8 @@ export class OrdersComponent implements OnInit {
     private apiService: ApiService,
     private authService: AuthService,
     public dialog: MatDialog,
-    public datePipe: DatePipe
+    public datePipe: DatePipe,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -38,13 +40,19 @@ export class OrdersComponent implements OnInit {
       (res) => {
         if (res.success) {
           this.orders = [...res.orders].reverse();
-          console.log('Orders ', this.orders);
         } else {
-          console.error('Failed to retrieve orders');
+          this.snackBar.open('Failed to retrieve orders', 'Close', {
+            duration: 2000,
+          });
         }
         this.isLoading = false;
       },
-      (err) => console.error('Error: ', err)
+      (err) => {
+        this.snackBar.open('Error loading orders', 'Close', {
+          duration: 2000,
+        });
+        this.isLoading = false;
+      }
     );
   }
 

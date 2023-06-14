@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { ApiService } from 'src/app/services/api.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -13,17 +14,15 @@ export class CategoryListComponent implements OnInit {
   items: any[] = [];
   category: string = 'movies';
   isLoading = true;
+  error = false;
 
   @Output() itemClicked = new EventEmitter<any>();
-
-  onItemClick(item: any) {
-    this.itemClicked.emit(item);
-  }
 
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +35,11 @@ export class CategoryListComponent implements OnInit {
             this.isLoading = false;
           },
           (error) => {
-            console.error('Error:', error);
+            this.snackBar.open('Error loading items', 'Close', {
+              duration: 2000,
+            });
+            this.isLoading = false;
+            // this.error = true;
           }
         );
       } else if (params['category']) {
@@ -46,16 +49,23 @@ export class CategoryListComponent implements OnInit {
     });
   }
 
+  onItemClick(item: any) {
+    this.itemClicked.emit(item);
+  }
+
   loadData(): void {
     if (this.category === 'all') {
       this.apiService.getAllItems().subscribe(
         (items: any) => {
           this.items = this.utilsService.processItems(items);
           this.isLoading = false;
-          console.log('Data:', this.items);
         },
         (error) => {
-          // console.error('Error:', error);
+          this.snackBar.open('Error loading items', 'Close', {
+            duration: 2000,
+          });
+          this.isLoading = false;
+          this.error = true;
         }
       );
     } else {
@@ -63,10 +73,13 @@ export class CategoryListComponent implements OnInit {
         (items: any) => {
           this.items = this.utilsService.processItems(items);
           this.isLoading = false;
-          console.log('Data:', this.items);
         },
         (error) => {
-          // console.error('Error:', error);
+          this.snackBar.open('Error loading items', 'Close', {
+            duration: 2000,
+          });
+          this.isLoading = false;
+          this.error = true;
         }
       );
     }

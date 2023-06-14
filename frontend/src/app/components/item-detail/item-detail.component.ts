@@ -26,11 +26,11 @@ export class ItemDetailComponent implements OnInit, OnChanges {
   emptyStars: number[] = [];
   user: User = {} as User;
 
+  isAuthenticated = false;
+
   onCloseButtonClick() {
     this.closeButtonClick.emit();
   }
-
-  isAuthenticated$ = this.authService.isAuthenticated;
 
   constructor(
     private authService: AuthService,
@@ -42,6 +42,9 @@ export class ItemDetailComponent implements OnInit, OnChanges {
     this.authService.user.subscribe((user) => {
       if (user) {
         this.user = user;
+        this.isAuthenticated = true;
+      } else {
+        this.isAuthenticated = false;
       }
     });
   }
@@ -60,6 +63,13 @@ export class ItemDetailComponent implements OnInit, OnChanges {
   }
 
   addToCart() {
+    if (!this.isAuthenticated) {
+      this.snackBar.open('Please sign in to add items to the cart', 'Close', {
+        duration: 3000,
+      });
+      return;
+    }
+
     const { _id, collectionName } = this.selectedItem;
     this.apiService.addToCart(this.user, _id, { collectionName }).subscribe(
       (res) => {
@@ -73,7 +83,10 @@ export class ItemDetailComponent implements OnInit, OnChanges {
           });
         }
       },
-      (err) => console.error('Error: ', err)
+      (err) =>
+        this.snackBar.open('An error occurred. Please try again.', 'Close', {
+          duration: 3000,
+        })
     );
   }
 }
