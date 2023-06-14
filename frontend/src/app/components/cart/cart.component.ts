@@ -72,8 +72,15 @@ export class CartComponent implements OnInit {
     );
   }
 
+  totalCost(): number {
+    return this.cart.reduce(
+      (total, item, index) => total + item.price * this.quantities[index],
+      0
+    );
+  }
+
   createOrder(billingInfo: any): void {
-    const totalCost = this.cart.reduce((total, item) => total + item.price, 0);
+    const totalCost = this.totalCost();
     const address = billingInfo.address1 + ' ' + billingInfo.address2;
     const customerName = billingInfo.firstName + ' ' + billingInfo.lastName;
     this.apiService

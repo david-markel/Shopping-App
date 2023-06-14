@@ -1,15 +1,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <div class="cart-container">
-  <app-billing-form
-    class="billing-form"
-    [user]="user"
-    (formSubmitted)="createOrder($event)"
-  ></app-billing-form>
+  <div class="checkout-container">
+    <app-billing-form
+      class="billing-form"
+      [user]="user"
+      (formSubmitted)="createOrder($event)"
+    ></app-billing-form>
+    <div class="total-section">
+      <h3>Total: ${{ totalCost() | number : "1.2-2" }}</h3>
+    </div>
+  </div>
+
   <div class="items-section">
     <h2 class="cart-header">Items in Cart</h2>
     <div class="items-container" *ngIf="!isLoading; else loading">
       <ng-container *ngIf="cart.length; else emptyCart">
         <div *ngFor="let item of cart; let i = index" class="cart-item">
+          <button class="remove-btn" (click)="removeItemFromCart(item)">
+            <mat-icon aria-label="Remove item">close</mat-icon>
+          </button>
           <app-item class="app-item" [props]="item"></app-item>
           <div class="item-controls">
             <div class="control-wrapper">
@@ -22,9 +31,6 @@
                   +
                 </button>
               </div>
-              <!-- <button class="remove-btn" (click)="removeItemFromCart(item)">
-                <mat-icon aria-label="Remove item">close</mat-icon>
-              </button> -->
             </div>
           </div>
         </div>

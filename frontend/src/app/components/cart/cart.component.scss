@@ -69,15 +69,6 @@
   align-items: center;
 }
 
-.cart-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
 .item-controls {
   display: flex;
   justify-content: center;
@@ -121,13 +112,64 @@
   margin: 0 10px;
 }
 
+.cart-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 .remove-btn {
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 20px;
-  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--primary-brown);
+  background: var(--primary-grey);
+  border-radius: 50%;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.remove-btn:hover {
+  background: var(--secondary-grey);
+}
+
+.total-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid gray;
+  h3 {
+    margin-right: 10px;
+  }
+}
+
+.checkout-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.billing-form {
+  grid-column: span 2;
+}
+
+.total-section {
+  grid-column: span 2;
+
+  @media (min-width: 768px) {
+    grid-column: 2;
+  }
 }
