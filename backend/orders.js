@@ -6,35 +6,38 @@ module.exports = (db, ObjectId) => {
   router.post("/createOrder", async (req, res) => {
     const { userId, items, totalCost, address, customerName } = req.body;
 
-    // Generate a new order
-    const newOrder = {
-      userId: new ObjectId(userId),
-      items: items.map((item) => ({
-        itemId: item._id,
-        quantity: item.quantity,
-      })), // map to only get itemId and quantity
-      totalCost,
-      address,
-      status: "processing",
-      created_at: new Date(),
-      customerName,
-    };
-
     try {
-      console.log("In try block");
+      if (!userId || !items || !totalCost || !address || !customerName) {
+        return res.status(400).json({
+          success: false,
+          message: "Missing required fields",
+        });
+      }
+
+      // Generate a new order
+      const newOrder = {
+        userId: new ObjectId(userId),
+        items: items.map((item) => ({
+          itemId: item._id,
+          quantity: item.quantity,
+        })), // map to only get itemId and quantity
+        totalCost,
+        address,
+        status: "processing",
+        created_at: new Date(),
+        customerName,
+      };
+
       // Insert the new order into the database
       const result = await db.collection("orders").insertOne(newOrder);
-      console.log("result: ", result);
+
       if (result.acknowledged) {
         try {
-          console.log("In try block of delte part");
           // Delete the user's cart after the order has been successfully created
           const cartResult = await db
             .collection("carts")
             .deleteOne({ userId: userId });
 
-          console.log("cart result:", cartResult);
-          console.log("Based on this userID: ", userId);
           if (cartResult.deletedCount === 0) {
             return res.json({
               success: false,
@@ -67,60 +70,93 @@ module.exports = (db, ObjectId) => {
   router.get("/getOrders/:userId", async (req, res) => {
     const { userId } = req.params;
 
-    const orders = await db
-      .collection("orders")
-      .find({ userId: new ObjectId(userId) })
-      .toArray();
+    try {
+      if (!userId) {
+        return res.status(400).json({
+          success: false,
+          message: "Missing required fields",
+        });
+      }
 
-    const categories = [
-      "groceries",
-      "clothing",
-      "household",
-      "toys",
-      "games",
-      "movies",
-      "furniture",
-    ];
+      const orders = await db
+        .collection("orders")
+        .find({ userId: new ObjectId(userId) })
+        .toArray();
 
-    // Transform 'itemId's back to item details
-    for (let order of orders) {
-      for (let item of order.items) {
-        let itemDetails = null;
-        for (let category of categories) {
-          itemDetails = await db
-            .collection(category)
-            .findOne({ _id: new ObjectId(item.itemId) });
+      const categories = [
+        "groceries",
+        "clothing",
+        "household",
+        "toys",
+        "games",
+        "movies",
+        "furniture",
+      ];
+
+      // Transform 'itemId's back to item details
+      for (let order of orders) {
+        for (let item of order.items) {
+          let itemDetails = null;
+          for (let category of categories) {
+            itemDetails = await db
+              .collection(category)
+              .findOne({ _id: new ObjectId(item.itemId) });
+            if (itemDetails) {
+              break;
+            }
+          }
+
           if (itemDetails) {
-            break;
+            item.title = itemDetails.title;
+            item.price = itemDetails.price;
+          } else {
+            console.error(
+              `Item with id ${item.itemId} not found in any category`
+            );
           }
         }
-
-        if (itemDetails) {
-          item.title = itemDetails.title;
-          item.price = itemDetails.price;
-        } else {
-          console.error(
-            `Item with id ${item.itemId} not found in any category`
-          );
-        }
       }
-    }
 
-    res.json({ success: true, orders });
+      res.json({ success: true, orders });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        success: false,
+        message: "Error retrieving orders from database",
+      });
+    }
   });
 
   router.put("/updateOrderStatus/:orderId", async (req, res) => {
     const { status } = req.body;
     const { orderId } = req.params;
 
-    const result = await db
-      .collection("orders")
-      .updateOne({ _id: new ObjectId(orderId) }, { $set: { status } });
+    try {
+      if (!status || !orderId) {
+        return res.status(400).json({
+          success: false,
+          message: "Missing required fields",
+        });
+      }
 
-    if (result.modifiedCount > 0) {
-      res.json({ success: true, message: "Order status updated successfully" });
-    } else {
-      res.json({ success: false, message: "Failed to update order status" });
+      const result = await db
+        .collection("orders")
+        .updateOne({ _id: new ObjectId(orderId) }, { $set: { status } });
+
+      if (result.modifiedCount > 0) {
+        res.json({
+          success: true,
+          message: "Order status updated successfully",
+        });
+      } else {
+        res.json({ success: false, message: "Failed to update order status" });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        success: false,
+        message: "Error updating order status in the database",
+      });
     }
   });
 

@@ -1,41 +1,40 @@
-const express = require("express");
-
-module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
+module.exports = (db, ObjectId, bcrypt, jwt, secretKey) => {
+  const express = require("express");
   const router = express.Router();
   let users = db.collection("users");
 
   router.post("/register", async (req, res) => {
-    console.log("Register endpoint hit, received request body: ", req.body);
-
     const { firstName, lastName, email, password } = req.body;
-    const hashedPassword = bcrypt.hashSync(password, 8); // hash the password
-
-    console.log("Password hashed successfully.");
-
-    const user = {
-      firstName,
-      lastName,
-      email,
-      password: hashedPassword,
-      subscriptionPlan: "basic",
-      address: {
-        address1: "",
-        address2: "",
-        city: "",
-        state: "",
-        country: "",
-        zipcode: "",
-      },
-    };
 
     try {
-      console.log("Attempting to insert user into database.");
+      if (!firstName || !lastName || !email || !password) {
+        return res.status(400).json({
+          success: false,
+          message: "Missing required fields",
+        });
+      }
+
+      const hashedPassword = bcrypt.hashSync(password, 8);
+
+      const user = {
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword,
+        subscriptionPlan: "basic",
+        address: {
+          address1: "",
+          address2: "",
+          city: "",
+          state: "",
+          country: "",
+          zipcode: "",
+        },
+      };
+
       const result = await users.insertOne(user);
 
-      console.log("Insertion result: ", result);
-
       if (result.acknowledged) {
-        console.log("Inserted ID: ", result.insertedId);
         const newUser = await users.findOne({ _id: result.insertedId });
 
         const token = jwt.sign(
@@ -50,9 +49,6 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
           secretKey,
           { expiresIn: 86400 } // expires in 24 hours
         );
-        console.log(
-          "User registered successfully, returning success response."
-        );
         res.send({ success: true, message: token });
       } else {
         throw new Error("User registration failed");
@@ -64,10 +60,12 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
         console.log("Email already exists, returning error response.");
         res
           .status(409)
-          .send({ success: false, message: "Email already exists" });
+          .json({ success: false, message: "Email already exists" });
       } else {
         console.log("Returning generic server error.");
-        res.status(500).send("Error registering user");
+        res
+          .status(500)
+          .json({ success: false, message: "Error registering user" });
       }
     }
   });
@@ -76,6 +74,7 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
     try {
       const { email, password } = req.body;
       const user = await users.findOne({ email });
+
       if (user && bcrypt.compareSync(password, user.password)) {
         // passwords match, generate a token
         const token = jwt.sign(
@@ -90,13 +89,13 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
           secretKey,
           { expiresIn: 86400 } // expires in 24 hours
         );
-        res.send({ auth: true, token });
+        res.json({ auth: true, token });
       } else {
-        res.status(401).send({ auth: false, token: null });
+        res.status(401).json({ auth: false, token: null });
       }
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error logging in");
+      res.status(500).json({ success: false, message: "Error logging in" });
     }
   });
 
@@ -117,14 +116,15 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
       if (firstName !== undefined) updatedFields.firstName = firstName;
       if (lastName !== undefined) updatedFields.lastName = lastName;
       if (email !== undefined) updatedFields.email = email;
-      if (password !== undefined)
+      if (password !== undefined) {
         updatedFields.password = bcrypt.hashSync(password, 8); // hash the password only if provided
+      }
       if (subscriptionPlan !== undefined)
         updatedFields.subscriptionPlan = subscriptionPlan;
       if (address !== undefined) updatedFields.address = address;
 
       if (Object.keys(updatedFields).length === 0) {
-        return res.send({ message: "No changes were made" });
+        return res.json({ success: false, message: "No changes were made" });
       }
 
       const result = await users.updateOne(
@@ -148,13 +148,13 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
           secretKey,
           { expiresIn: 86400 } // expires in 24 hours
         );
-        res.send({ success: true, message: token });
+        res.json({ success: true, message: token });
       } else {
         throw new Error("User update failed");
       }
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error updating user");
+      res.status(500).json({ success: false, message: "Error updating user" });
     }
   });
 
@@ -167,30 +167,29 @@ module.exports = function (db, ObjectId, bcrypt, jwt, secretKey) {
       });
 
       if (result.deletedCount > 0) {
-        res.send({ success: true, message: "User deleted successfully" });
+        res.json({ success: true, message: "User deleted successfully" });
       } else {
         throw new Error("User deletion failed");
       }
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error deleting user");
+      res.status(500).json({ success: false, message: "Error deleting user" });
     }
   });
 
   router.post("/validatePassword", async (req, res) => {
     const { id, password } = req.body;
     try {
-      const user = await db
-        .collection("users")
-        .findOne({ _id: new ObjectId(id) });
-      if (user && (await bcrypt.compare(password, user.password))) {
+      const user = await users.findOne({ _id: new ObjectId(id) });
+
+      if (user && bcrypt.compareSync(password, user.password)) {
         res.json({ success: true });
       } else {
         res.json({ success: false });
       }
     } catch (error) {
       console.error(error);
-      res.status(500).send("Server error");
+      res.status(500).json({ success: false, message: "Server error" });
     }
   });
 

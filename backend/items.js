@@ -5,7 +5,6 @@ module.exports = function (db) {
 
   router.get("/getAllItems", async (req, res) => {
     try {
-      let items = [];
       const collections = [
         "furniture",
         "clothing",
@@ -16,6 +15,8 @@ module.exports = function (db) {
         "groceries",
       ];
 
+      let items = [];
+
       for (const collection of collections) {
         const collItems = await db.collection(collection).find({}).toArray();
         items = items.concat(collItems);
@@ -24,7 +25,10 @@ module.exports = function (db) {
       res.send(items);
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error retrieving items from database");
+      res.status(500).send({
+        success: false,
+        message: "Error retrieving items from database",
+      });
     }
   });
 
@@ -36,7 +40,10 @@ module.exports = function (db) {
       res.send(items);
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error retrieving items from database");
+      res.status(500).send({
+        success: false,
+        message: "Error retrieving items from database",
+      });
     }
   });
 
@@ -52,6 +59,7 @@ module.exports = function (db) {
         "movies",
         "toys",
       ];
+
       let results = [];
 
       for (const collection of collections) {
@@ -65,13 +73,15 @@ module.exports = function (db) {
       res.send(results);
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error retrieving items from database");
+      res.status(500).send({
+        success: false,
+        message: "Error retrieving items from database",
+      });
     }
   });
 
   router.get("/just-for-you", async (req, res) => {
     try {
-      let items = [];
       const collections = [
         "furniture",
         "clothing",
@@ -81,6 +91,8 @@ module.exports = function (db) {
         "toys",
         "groceries",
       ];
+
+      let items = [];
 
       for (const collection of collections) {
         const collItems = await db.collection(collection).find({}).toArray();
@@ -97,7 +109,10 @@ module.exports = function (db) {
       res.send(items.slice(0, 9));
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error retrieving items from database");
+      res.status(500).send({
+        success: false,
+        message: "Error retrieving items from database",
+      });
     }
   });
 
