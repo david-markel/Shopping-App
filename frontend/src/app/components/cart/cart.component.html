@@ -9,11 +9,24 @@
     <h2 class="cart-header">Items in Cart</h2>
     <div class="items-container" *ngIf="!isLoading; else loading">
       <ng-container *ngIf="cart.length; else emptyCart">
-        <div *ngFor="let item of cart">
+        <div *ngFor="let item of cart; let i = index" class="cart-item">
           <app-item class="app-item" [props]="item"></app-item>
-          <button class="remove-btn" (click)="removeItemFromCart(item)">
-            <mat-icon aria-label="Remove item">close</mat-icon>
-          </button>
+          <div class="item-controls">
+            <div class="control-wrapper">
+              <div class="quantity-control">
+                <button class="quantity-btn" (click)="decrementQuantity(i)">
+                  -
+                </button>
+                <span class="quantity">{{ quantities[i] }}</span>
+                <button class="quantity-btn" (click)="incrementQuantity(i)">
+                  +
+                </button>
+              </div>
+              <!-- <button class="remove-btn" (click)="removeItemFromCart(item)">
+                <mat-icon aria-label="Remove item">close</mat-icon>
+              </button> -->
+            </div>
+          </div>
         </div>
       </ng-container>
       <ng-template #emptyCart>

@@ -13,6 +13,8 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class CartComponent implements OnInit {
   cart: ItemData[] = [];
   user: User = {} as User;
+  quantities: number[] = [];
+
   isLoading = true;
   constructor(
     private apiService: ApiService,
@@ -35,10 +37,11 @@ export class CartComponent implements OnInit {
       (res) => {
         if (res.success) {
           this.cart = this.utilsService.processItems(res.cart.items);
-          this.isLoading = false;
+          this.quantities = Array(this.cart.length).fill(1);
         } else {
           console.error('Failed to retrieve cart');
         }
+        this.isLoading = false;
       },
       (err) => console.error('Error: ', err)
     );
@@ -84,5 +87,15 @@ export class CartComponent implements OnInit {
           console.error('Error creating order:', err);
         }
       );
+  }
+
+  incrementQuantity(index: number) {
+    this.quantities[index]++;
+  }
+
+  decrementQuantity(index: number) {
+    if (this.quantities[index] > 1) {
+      this.quantities[index]--;
+    }
   }
 }
