@@ -4,12 +4,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { LoginResponse, RegisterResponse, User } from '../models/interfaces';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = environment.BASE_URL;
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
@@ -29,7 +30,7 @@ export class AuthService {
 
   register(user: any): Observable<RegisterResponse> {
     return this.http
-      .post<RegisterResponse>(`${this.apiUrl}/register`, user)
+      .post<RegisterResponse>(`${this.apiUrl}/api/register`, user)
       .pipe(
         tap((response) => {
           if (response.success) {
@@ -44,7 +45,7 @@ export class AuthService {
 
   login(credentials: any): Observable<LoginResponse> {
     return this.http
-      .post<LoginResponse>(`${this.apiUrl}/login`, credentials)
+      .post<LoginResponse>(`${this.apiUrl}/api/login`, credentials)
       .pipe(
         tap((response) => {
           if (response.auth) {
@@ -65,7 +66,7 @@ export class AuthService {
 
   updateAccount(user: User): Observable<RegisterResponse> {
     return this.http
-      .put<RegisterResponse>(`${this.apiUrl}/updateUser`, user)
+      .put<RegisterResponse>(`${this.apiUrl}/api/updateUser`, user)
       .pipe(
         tap((response) => {
           if (response.success) {
@@ -82,7 +83,7 @@ export class AuthService {
   deleteAccount(id: string): Observable<{ success: boolean; message: string }> {
     return this.http
       .delete<{ success: boolean; message: string }>(
-        `${this.apiUrl}/deleteUser/${id}`
+        `${this.apiUrl}/api/deleteUser/${id}`
       )
       .pipe(
         tap((response) => {
@@ -94,7 +95,7 @@ export class AuthService {
   }
 
   validatePassword(id: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/validatePassword`, {
+    return this.http.post<any>(`${this.apiUrl}/api/validatePassword`, {
       id,
       password,
     });

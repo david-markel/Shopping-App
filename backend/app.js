@@ -3,6 +3,7 @@ const cors = require("cors");
 const { MongoClient, ObjectId } = require("mongodb");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const path = require("path");
 require("dotenv").config();
 
 const secretKey = process.env.SECRET_KEY;
@@ -11,7 +12,20 @@ const dbUrl = process.env.DB_URL;
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "dist/frontend")));
+  app.get("/*", function (req, res, next) {
+    if (req.originalUrl.startsWith("/api")) {
+      // Pass the request to the next middleware
+      next();
+    } else {
+      // Serve the Angular application
+      res.sendFile(path.join(__dirname, "dist/frontend/index.html"));
+    }
+  });
+}
 
 const client = new MongoClient(dbUrl, { useUnifiedTopology: true });
 let db;
@@ -28,10 +42,10 @@ client
     const cartRoutes = require("./carts")(db, ObjectId);
     const orderRoutes = require("./orders")(db, ObjectId);
 
-    app.use(userRoutes);
-    app.use(itemRoutes);
-    app.use(cartRoutes);
-    app.use(orderRoutes);
+    app.use("/api", userRoutes);
+    app.use("/api", itemRoutes);
+    app.use("/api", cartRoutes);
+    app.use("/api", orderRoutes);
 
     app.listen(port, () => {
       console.log(`Server listening at http://localhost:${port}`);

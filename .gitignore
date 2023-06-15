@@ -6,6 +6,8 @@
 
 # Node
 /frontend/node_modules/
+/frontend/dist/
+/backend/dist/
 /backend/node_modules/
 npm-debug.log
 yarn-error.log
@@ -35,6 +37,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+/dist
 .env
 
 # System files
