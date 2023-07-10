@@ -1,4 +1,2 @@
 # Shopping-App
-Mock site for online shopping. Also used as a tutorial for making first web app. 
-
-Fist commit. Yay!
+Markelo,’ a scalable, Amazon-inspired e-commerce web application, developed for the purpose of showcasing a robust understanding of full-stack development and scalable architecture.
